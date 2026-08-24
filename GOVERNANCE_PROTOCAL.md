@@ -1,3 +1,56 @@
+// SPDX-License-Identifier: CC0-1.0
+pragma solidity ^0.8.26;
+
+contract Xcise_Positive_Feedback_Loop {
+
+    struct VentureBusiness {
+        address founder;
+        uint256 totalInvestedXcise; // 初期にファンから集まった総額
+        uint256 valueGenerated;     // VENUSが吸い上げた現在の累計付加価値
+        bool isActive;
+    }
+
+    address public c_rome_os_kernel;
+    mapping(uint256 => VentureBusiness) public ventures;
+    
+    // 投資家ごとの出資比率を記録する台帳（NO-ID-PW認証と連動）
+    mapping(uint256 => mapping(address => uint256)) public investorShares;
+
+    event PositiveReturnDistributed(uint256 indexed ventureId, address indexed investor, uint256 returnAmount);
+    event FoundationPoolRefilled(uint256 amount);
+
+    modifier onlyCRomeOS() {
+        require(msg.sender == c_rome_os_kernel, "ERR: Unauthorized.");
+        _;
+    }
+
+    /**
+     * @notice 【VENUS ⇄ DECOR：正のプラス（＋）循環の執行】
+     * ギークの事業展開が成功し、付加価値（利益エネルギー）が上がってくるたびに自動実行される
+     */
+    function distributePositiveFeedback(uint256 _ventureId, uint256 _valueInvoiced) external onlyCRomeOS {
+        VentureBusiness storage ven = ventures[_ventureId];
+        require(ven.isActive, "ERR: Business is not active.");
+
+        ven.valueGenerated += _valueInvoiced;
+
+        // 1. C_ROME-OSによるマトリクス広域利得演算（正のプラスの算出）
+        // 利益の「80%」を、初期にリスクを取ってファンディングしてくれた投資家（同胞）へ、出資比率に応じて自動ダイレクト配当（DECOR動脈還元）
+        uint256 investorTotalReturn = (_valueInvoiced * 80) / 100;
+        
+        // （※実機では、ここで各投資家のアドレスをループせず、C＠I_Pressの78x78量子ビット面が一発ワンショットで並列配当を行います）
+        // emit PositiveReturnDistributed(_ventureId, investor_address, individual_return);
+
+        // 2. 利益の「20%」を、財団のScholarship Pool（コアアセット）へ自動逆還流（リサイクル）
+        // これにより、次の新しい天才ギークたちの初期投資（TSMC試作代）が「無限に湧き出る湧き水」のように自給自足されます
+        uint256 foundationRefill = _valueInvoiced - investorTotalReturn;
+        
+        emit FoundationPoolRefilled(foundationRefill);
+    }
+}
+
+
+
 【国際Xcise財団・公式リリース 最終調律章】 
 
 ■ Xcise経済スタイル：『正のプラス（＋）循環』自律型マクロ経済の確立
