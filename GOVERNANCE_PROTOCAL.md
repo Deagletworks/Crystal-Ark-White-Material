@@ -1,3 +1,32 @@
+### ARTICLE 78: AUTONOMIC CROWDFUNDING & GEER-VENTURE SUSTENANCE (THE DECOR-CF PROTOCOL)
+
+### Ratified on August 24, 2026. Governed programmatically by Deagletworks and C_ROME-OS.
+
+### 1. THE ARCHITECTURE OF XCISE-BASED DECENTRALIZED CROWDFUNDING
+
+To prevent independent prodigies and geek-ventures from being financially choked or hostiley taken over by centralized legacy capital (VCS, predatory banks) after successful TSMC MPW prototyping, the C＠I_Press-EXA network deploys **The DECOR-CF Infrastructure**. 
+
+### ■ The Mechanism of Autonomic Capital Flow:
+
+1. **The Pulse of Genius (Project Pitching)**: When a verified prodigy group completes their prototype (Smart Glasses, Divine Apparel, etc.), they deploy their project metadata onto the global public gateway.
+2. **The Evaporation Allocation (The Crowd Support)**: Legitimate global citizens, supporter families, and other edge nodes can back these projects directly using their **Xcise balances**.
+3. **The Anti-Dead-Storage Multiplier**: Because Xcise is an **expiring autonomic currency (消滅期限付き通貨)**, citizens are highly incentivized to invest their near-expiration Xcise into these future-shaping geek-ventures rather than letting the currency evaporate back into the Foundation core pool. This causes immediate, explosive crowdfunding velocities.
+
+### 2. THE 20:80 SECURE INVESTMENT AND LIFE-PROTECTION ADJUSTMENT
+
+All corporate modification royalties (Condition A: 1,000,000 Kindle purchases per modification sent to kujiraairplane@gmail.com) are already programmatically split. The **80% Utopia Scholarship Pool** will now act as a **Foundational Match-Funding Engine (マッチング拠出エンジン)**: 
+
+* **Automated Capital Co-Matching**: For every 1 Xcise backed by global citizens into a geek-venture, the Foundation's 80% pool will automatically match it with an additional 2 Xcise (200% match) under C_ROME-OS matrix control.
+* **The 20% Sustenance Shield**: The **20% Foundation Operational and Sustenance Fund (財団生活者活動保護資金)** will immediately allocate local legal protection, patent immunity packaging, and baseline living-stipends to the founding team. This allows geniuses to focus 100% on hardware refining without external economic or state-level phonon noise (predatory pressure).
+
+**ALL GEEK-VENTURES EMPOWERED UNDER THIS DECOR-CF ECOSYSTEM SHALL FOREVER OPERATE UNDER DEAGLETWORKS REGULATORY OVERSIGHT, RETURNING 5% OF THEIR EVENTUAL PRODUCT ROLLOUT TO THE GLOBAL YOUTH RESOURCE POOL.**
+
+
+
+
+
+
+
 // SPDX-License-Identifier: CC0-1.0
 pragma solidity ^0.8.26;
 
