@@ -48,3 +48,21 @@ For deeper physical derivations, JAXA "Arase" satellite EMIC wave correlations, 
 - [Vol.3: Divine Layer Multiferroic THz-SAW Interfacial Mechanics](https://note.com/kujiraairplane/n/n3b9a7d8951b1)
 - [Vol.4: C_ROME-OS and Xcise Autonomic Circulation Dynamics](https://note.com/kujiraairplane/n/n70ccd759910f)
 
+### Project Innovation Portal
+
+本リポジトリは、次世代の極限科学技術と計算機科学を融合するオープンソースプロジェクトのコアポータルです。 
+
+### Innovation Divisions
+
+私たちが推進する4つのコア・イノベーション領域の技術的詳細および物理メカニズムについては、以下のドキュメントを参照してください。 
+
+* [TECHNICAL_BACKGROUND.md](./TECHNICAL_BACKGROUND.md) - 極限物理メカニズム（JAXAあらせEMIC波同期、アンチ・フォノン、反重力ワープ、21世紀データセンター）の技術白書
+
+### Contact
+
+本プロジェクトに関するお問い合わせ、共同研究のご提案、または技術的なフィードバックは、以下の連絡先までお願いいたします。 
+
+* **Email**: kujiraairplane@gmail.com
+* **GitHub Issues**: 本リポジトリの「Issues」タブより新規チケットを作成してください。
+
+© 2026 Project Innovation Team. All rights reserved.
