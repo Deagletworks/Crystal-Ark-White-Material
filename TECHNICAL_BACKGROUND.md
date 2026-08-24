@@ -41,8 +41,9 @@
 ### 1. JAXA「あらせ」EMIC波同期
 
 波動ー粒子相互作用における電子のサイクロトロン共鳴条件、およびノード間の位相同期を記述する蔵本モデルをベースとしたシミュレーション。 
+地球磁気圏（ジオスペース）における**EMIC波（電磁イオンサイクロトロン波）**の不均一性を利用し、分散ノード（全日本人のQPUフィルム繊維エッジノード群：VENUSインフラ）の位相同期（蔵本モデル）を行うシステム。
 
-### ■ 数理モデル
+### ■ 数理モデル S-WPIAにおける電子のサイクロトロン共鳴条件。
 
 共鳴条件式：
 
@@ -118,10 +119,11 @@ def simulate_emic_synchronization(num_nodes=50, timesteps=1000, coupling_strengt
 ### 2. アンチ・フォノン（結晶格子制御）
 
 1次元の二原子格子（Diatomic Lattice）モデルにおけるフォノニック・バンドギャップの導出と、指定周波数の減衰エミュレーション。 
+固体結晶中を伝播する音響波・熱振動（フォノン）の位相幾何学的相殺技術。QPU付きマルチフェロイック膜を用い、地震波・衝撃波をノイズキャンセリングする構造。
 
 ### ■ 数理モデル
 
-フォノン分散関係式（二原子格子）：
+フォノン分散関係式（二原子格子）： 1次元二原子格子モデルにおけるフォノニック・バンドギャップ。2原子格子の分散関係式（acoustic/optical branch）計算。
 
 ω2=γ(1M1+1M2)±γ(1M1+1M2)2−4sin2(ka/2)M1M2omega squared equals gamma open paren the fraction with numerator 1 and denominator cap M sub 1 end-fraction plus the fraction with numerator 1 and denominator cap M sub 2 end-fraction close paren plus or minus gamma the square root of open paren the fraction with numerator 1 and denominator cap M sub 1 end-fraction plus the fraction with numerator 1 and denominator cap M sub 2 end-fraction close paren squared minus the fraction with numerator 4 sine squared open paren k a / 2 close paren and denominator cap M sub 1 cap M sub 2 end-fraction end-root
 𝜔2=𝛾1𝑀1+1𝑀2±𝛾1𝑀1+1𝑀22−4sin2(𝑘𝑎/2)𝑀1𝑀2
@@ -186,11 +188,11 @@ def calculate_phonon_bandgap(M1=1.0, M2=3.0, gamma=1.0, steps=100):
 
 ### 3. 反重力ワープ（時空歪曲推進）
 
-アラクビエレ計量における形状関数（レギュレータ）と、時空の歪曲（膨張・収縮）度合いのモデリング。 
+アラクビエレ計量における形状関数（レギュレータ）と、時空の歪曲（膨張・収縮）度合いのモデリング。 テラヘルツ（THz）帯域の逆位相縦波パルスを用いた、慣性質量をゼロにする質量変調プロセス。アラクビエレ・ワープドライブ計量を用いて時空の曲率を相殺する。
 
 ### ■ 数理モデル
 
-アラクビエレ・ワープドライブ計量の時空歪曲関数：
+アラクビエレ・ワープドライブ計量の時空歪曲関数：アラクビエレ・ワープドライブ計量の時空歪曲関数（tanhラッパー）。ワープバブル前後における時空の膨張（後方）と収縮（前方）の計算。
 
 f(r)=tanh(σ(r+R))−tanh(σ(r−R))2tanh(σR)f of r equals the fraction with numerator hyperbolic tangent open paren sigma open paren r plus cap R close paren close paren minus hyperbolic tangent open paren sigma open paren r minus cap R close paren close paren and denominator 2 hyperbolic tangent open paren sigma cap R close paren end-fraction
 𝑓(𝑟)=tanh(𝜎(𝑟+𝑅))−tanh(𝜎(𝑟−𝑅))2tanh(𝜎𝑅)
@@ -249,10 +251,11 @@ def alcubierre_warp_bubble(grid_size=100, R=2.0, sigma=8.0, v_s=1.5):
 ### 4. 21世紀データセンター（宇宙放射冷却）
 
 大気の窓（8–13μm）を利用した宇宙への熱放射（プランクの法則の積分）と、サーバー排熱の熱平衝シミュレーション。 
+消費電力「0.00W」を極限まで目指した不揮発性Qubit-FeRAMデータセンター。マルチフェロイック層を用いて、大気の窓（8–13μm）を通じて宇宙へ熱放射を行う。
 
 ### ■ 数理モデル
 
-宇宙への純放射冷却流束（Net Radiative Cooling Flux）：
+宇宙への純放射冷却流束（Net Radiative Cooling Flux）：宇宙への純放射冷却流束とプランクの法則に基づく放射パワーの定積分。放射冷却によるデータセンターの温度推移シミュレーション。
 
 Pnet(T)=Prad(T)−Patm(Tamb)−Psolarcap P sub net end-sub open paren cap T close paren equals cap P sub rad end-sub open paren cap T close paren minus cap P sub atm end-sub open paren cap T sub amb end-sub close paren minus cap P sub solar end-sub
 𝑃net(𝑇)=𝑃rad(𝑇)−𝑃atm(𝑇amb)−𝑃solar
