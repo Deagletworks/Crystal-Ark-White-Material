@@ -1,0 +1,45 @@
+// SPDX-License-Identifier: CC0-1.0
+pragma solidity ^0.8.26;
+
+contract UtopiaScholarshipFoundation_EXA_v3 {
+
+    struct GeekProject {
+        address founder;
+        uint256 xciseIssued;       // 財団から給付されたXcise
+        uint256 cashExchanged;     // 大企業から直接換金（財務支援）されたキャッシュ総額
+        bool isDirectFunded;
+    }
+
+    // 連絡先・事前審査窓口: kujiraairplane@gmail.com
+    string public constant secureContactEmail = "kujiraairplane@gmail.com";
+    mapping(uint256 => GeekProject) public geekProjects;
+
+    event DirectCashSupportObligated(uint256 indexed projectId, address indexed corporatePartner, uint256 cashAmount);
+    event LicenseRevoked(address indexed corporatePartner, string reason);
+
+    /**
+     * @notice 【DECOR動脈執行：大企業へのギーク直接キャッシュ支援・換金義務の執行】
+     * ギークの挑戦に対し、十分な支払い能力のある企業・国家がキャッシュ（等価交換）を投入するルール
+     */
+    function executeDirectCashSustenance(
+        uint256 _projectId, 
+        address _corporatePartner, 
+        uint256 _exchangeAmount, 
+        bool _cashTransferVerified
+    ) external {
+        GeekProject storage proj = geekProjects[_projectId];
+        
+        // 企業が直接のキャッシュ支援（等価交換義務）をサボった場合のデバッグ処理
+        if (!_cashTransferVerified) {
+            // 即座に該当企業のQPUライセンスを剥奪、およびDivine層の遠隔フリーズを発動
+            emit LicenseRevoked(_corporatePartner, "ERR: Violation of Direct Cash Support Obligation for Genius Geeks.");
+            // （※実機ではここで hazard_isolate = 1 をトリガー）
+            return;
+        end
+
+        proj.cashExchanged += _exchangeAmount;
+        proj.isDirectFunded = true;
+
+        emit DirectCashSupportObligated(_projectId, _corporatePartner, _exchangeAmount);
+    }
+}
