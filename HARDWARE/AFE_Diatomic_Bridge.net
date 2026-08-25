@@ -1,0 +1,62 @@
+* C_ROME-OS / Project-Crystal-Ark-EXA: 1ns Layer-3 Qubit Phase Reader AFE Netlist
+* Copyright (c) 2026 Deagletworks. All Rights Reserved.
+* Secure Endpoint: kujiraairplane@gmail.com
+
+.OPTIONS Post=1 Brief=1
+
+* ==============================================================================
+* 1. 100MHz 高周波交流キャリア源 & 78x78マトリクス駆動パルス入力段
+* ==============================================================================
+V_AC_CARRIER  N_CARRIER_IN  0  AC 200mV_pp  DFM=100Meg
+V_MATRIX_ROW  N_ROW_PULSE   0  PULSE(0V 1.2V 0ns 0.1ns 0.1ns 1ns 2ns)
+
+* ==============================================================================
+* 2. 計測チャネル・差動容量ブリッジトポロジー (Diatomic Bridge)
+* ==============================================================================
+* C_REF: 幾何多面体積演算の基準となる固定コンデンサ (10pF)
+C_REF         N_CARRIER_IN  N_BRIDGE_MINUS   10pF
+
+* C_QUBIT: La:HfO2強誘電体薄膜（5nm厚）の電荷・酸素空孔スピン容量 (10pF +/- ΔC)
+* 微小容量変化 ΔC = 5fF ~ 20fF を模倣
+C_QUBIT       N_CARRIER_IN  N_BRIDGE_PLUS    10.01fF
+
+* ブリッジ安定化のための超高抵抗終端
+R_TERM_MINUS  N_BRIDGE_MINUS 0               10Meg
+R_TERM_PLUS   N_BRIDGE_PLUS  0               10Meg
+
+* ==============================================================================
+* 3. 超低バイアス高速FETオペアンプ段（第一段：トランスインピーダンスアンプ TIA）
+* ==============================================================================
+* OPA810等の超低入力バイアス電流・高速オペアンプを想定したマクロピン配置
+* 接続ピン: [非反転入力, 反転入力, 正電源, 負電源, 出力]
+X_TIA_OPAMP   N_BRIDGE_MINUS  N_BRIDGE_PLUS  N_VCC  N_VEE  N_TIA_OUT  OPA810_Macro
+
+* TIA帰還ネットワーク（極微小電流差 ΔI を高シグナルゲイン電圧へ変換）
+R_TIA_FB      N_BRIDGE_PLUS   N_TIA_OUT      100k
+C_TIA_FB      N_BRIDGE_PLUS   N_TIA_OUT      0.5pF
+
+* 電源クリーンインジェクション (ノイズ遮断デカップリング)
+V_VCC         N_VCC           0              DC 5.0V
+V_VEE         N_VEE           0              DC -5.0V
+C_VCC_BYP     N_VCC           0              0.1uF
+C_VEE_BYP     N_VEE           0              0.1uF
+
+* ==============================================================================
+* 4. 2段目：100MHz 超急峻アクティブ・バンドパスフィルタ (BPF)
+* ==============================================================================
+* キャリア周波数 100MHz のみを選択的に透過し、フォノン・環境熱ノイズを完全相殺
+X_BPF_OPAMP   0  N_BPF_IN  N_VCC  N_VEE  N_BPF_OUT  OPA855_Macro
+R_BPF_SERIES  N_TIA_OUT    N_BPF_IN      50
+C_BPF_SERIES  N_BPF_IN     N_BPF_OUT     31.8pF
+L_BPF_SHUNT   N_BPF_OUT    0             79.6nH
+
+* ==============================================================================
+* 5. フラッシュ型高速コンパレータアレイ段（1nsワンショット・ラッチ）
+* ==============================================================================
+* C_ROME-OSの最上位カーネルレジスタへ12bitデジタル解（多面体積）を渡すフロントエンド
+* 接続ピン: [信号入力, 基準電圧入力, デジタル出力, 電源]
+X_COMP_LATCH  N_BPF_OUT    N_REF_VOLT    N_Q_DIGITAL_OUT  N_VCC  ADC_Flash_1ns
+
+V_REF_VOLT    N_REF_VOLT   0             DC 1.2V
+
+.END
