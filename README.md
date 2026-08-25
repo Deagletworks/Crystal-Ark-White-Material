@@ -7,7 +7,7 @@
 ---
 
 ## 🌍 Supreme Manifesto of Human Convergence
-> "我々人類は、この欠け外の無い、緑の美しい地球無くして、存在することができない生命体である。それを失えば存在の根源を失ってしまうのである。宇宙銀河が当然の如く変遷しても、我々人類はこの地球上に生息し、生き続ける生命体である事を、その存在が誕生した時点から定められた運命である事をここに銘記する。"
+> "我々人類は、この欠け外の無い、緑の美しい地球無くして、存在することができない生命体である。それを失えば、存在の根源を失ってしまうのである。宇宙銀河が当然の如く変遷しても、我々人類はこの地球上に生息し、生き続ける生命体である事を、その存在が誕生した時点から定められた運命である事をここに銘記する。"
 > — Kujira Airplane (鯨天球 / Ashimov Isac)
 
 This repository is the official public portal for **C＠I_Press** and **C＠I_Press-EXA**, a room-temperature operating, non-von Neumann, high-dimensional space-packing computing infrastructure designed for the total defense, environment alignment, and harmonic evolution of human civilization.
