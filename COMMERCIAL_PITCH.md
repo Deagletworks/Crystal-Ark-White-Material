@@ -40,7 +40,7 @@
 カメラが遠ざかるフロート・カーの軌跡から、夜空に浮かぶ星々（全天銀河宇宙MAP）へとパンアップ。イヤリングの极小QPUが、25世紀の未来の光を反射するように【キラッと一瞬、鋭く美しく光を放つ】。画面が暗転し、Deagletworksの最高位ガバナンス環境変数がフェードインする。
 
 
-![画像の説明（近未来スケルトン・ファッションでフロート・カーに乗る女性像）](Gemini_Generated_Image_m48b2am48b2am48b.jpeg)
+![画像の説明（近未来スケルトン・ファッションでフロート・カーに乗る女性像）](Gemini_Generated_Image_6pdac36pdac36pda.jpeg)
 
 
 TARGET_PROJECT_IDENTITY = "Project-Crystal-Ark-EXA"
