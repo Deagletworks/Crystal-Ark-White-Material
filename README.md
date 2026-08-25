@@ -80,6 +80,7 @@ For deeper physical derivations, JAXA "Arase" satellite EMIC wave correlations, 
 - [Vol.4: Principle of Anti-Gravity & Anti-Phonon Wavefronts](https://note.com/kujiraairplane/n/n091f4a900218)
 
 ＊ちなみに、” Kujira_Airplane (宇宙時空間を旅する飛行船である地球）”は、技術解説で登場する「２５世紀のDr.Catherine Deglan」の娘である「時空間ワープ先の１億Σ聖記年の天才物理および人類史学者のDr.Venus Deglan」のことであり、SFでは彼女がCrystal-Arkの発明者という設定である。
+https://www.amazon.co.jp/stores/author/B0CWKPN3J8/allbooks
 
 
 ### Project Innovation Portal
