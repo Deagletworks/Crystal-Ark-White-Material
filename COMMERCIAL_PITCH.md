@@ -45,6 +45,9 @@
 ![画像の説明（近未来スケルトン・ファッションで耳にAIイヤリングを着けている女性像）](Gemini_Generated_Image_nv58cnnv58cnnv58.jpeg)
 ![画像の説明（近未来スケルトン・ファッションでAIグラスを着けている女性像）](Gemini_Generated_Image_ebtwwxebtwwxebtw.jpeg)
 
+![画像の説明（近未来スケルトン・ファッションで耳にAIイヤリングを着け浮上する女性像）](Gemini_Generated_Image_90w7x390w7x390w7.jpeg)
+![画像の説明（近未来スケルトン・ファッションでAIグラスを着け浮上する女性像）](Gemini_Generated_Image_cobuy5cobuy5cobu.jpeg)
+
 
 TARGET_PROJECT_IDENTITY = "Project-Crystal-Ark-EXA"
 All authorized compliance applications: kujiraairplane@gmail.com
