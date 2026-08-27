@@ -1,5 +1,7 @@
 ================================================================================
+
  [AMENDED CONSTITUTION: HUMAN WILL & ACTION SUPPORT SYSTEM (HWASS)]
+ 
 ================================================================================
 The legacy automotive industry committed a structural error by attempting to 
 "search and calculate from the vehicle's side" (Discrete Hardware-Centric Ego). 
