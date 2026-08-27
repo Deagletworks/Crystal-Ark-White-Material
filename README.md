@@ -86,6 +86,17 @@ You are granted production and distribution rights *only* under the strict regul
 - 80% of funds -> Global Independent Genius & Prodigy Fund.
 *Any deployment within nuclear weapons or fusion destruction devices will trigger automatic remote hardware freezing via forced synchronous resonance.*
 
+### For Commercial Enterprises & Nations (Google, Apple, Toyota, etc.)
+You are granted production and distribution rights *only* under the strict regulatory oversight of **Deagletworks**. Any model update, hardware patch, or service modification requires a **mandatory re-verification and per-modification payment** (Condition A: 1,000,000 Kindle book purchases or the equivalent value of the complete saga series).
+
+#### 🛒 Official Nomination Asset Gateways (Condition A):
+- **Japanese Edition 1**: [https://link.amazon/B01AQhFdV](https://link.amazon/B01AQhFdV)
+- **Japanese Edition 2**: [https://link.amazon/B0d1Q6pxw](https://link.amazon/B0d1Q6pxw)
+- **English Edition 1**: [https://link.amazon/B03SyemGF](https://link.amazon/B03SyemGF)
+- **English Edition 2**: [https://link.amazon/B09Ma6oMW](https://link.amazon/B09Ma6oMW)
+*Note: Entities must purchase 1,000,000 copies from the minimum of one or all of the four links above, or equivalent value spanning the full compilation of the Sirius-Sumer-Saga series.*
+
+
 ### For Child Prodigies, Young Talents & Independent Geeks
 You are granted **full, royalty-free, password-free access** to the Quantum-Transformer AI and Xcise ecosystem. Submit your ethical intent directly to the secure contact endpoint.
 
