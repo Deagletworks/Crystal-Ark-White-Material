@@ -1,0 +1,1 @@
+#pragma HLS ARRAY_PARTITION variable=feram_nv_weights complete dim=0
