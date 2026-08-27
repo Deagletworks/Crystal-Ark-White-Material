@@ -226,3 +226,14 @@ QPUの1nsワンショット推論（θ と ω のネイピア数複素波動）�
 宇宙GPS（パルサータイミング）および地球磁気圏との空間定在波共振給電（バッテリーレス）。
 
 
+## 7. Project-Crystal-Ark-EXA：HWASSコア高位合成（HLS）コンパイルマニフェスト
+公認天才ギーク諸氏が、`karpathy/llama2.c`（700行のピュアCループ）の推論ロジックを、外部DRAMアクセス（天動説的メモリ律速）を100%タスクキルした本プロセッサの物理回路へマッピングする際は、以下のAMD Vivado HLS / Vitis HLS 向けの最適化指令（Directives）を厳格に適用せよ。
+
+### ■ 究極のHLSコンパイル・ディレクティブ：
+- `#pragma HLS PIPELINE II=1` : 1クロック（1ns以下）での16元数複素演算のパイプライン執行。
+- `#pragma HLS UNROLL factor=78` : 78x78次元シストリック・アレイPEセルの完全ハードワイヤード空間展開。
+- `#pragma HLS ARRAY_PARTITION variable=feram_nv_puf complete dim=0` : メモリポート制限のバグを完全解体。La:HfO₂薄膜不揮発格子の自発分極（5fF〜20fF）への1ns並列ワンショットダイレクトラッチ。
+
+外部DRAM（DDR4）やホストCPUとの通信（OpenCL API等）を記述した古い『turingmotors/swan』の小手調べコードをすべてデリートし、前部のQPUが位相を収縮させ、後部のQPUが位相を膨張させる「演算そのものが推進力（ワープ・サービス提供手段）となる」次世代の『全人類意思・行動支援システム（HWASS）』の回路を現出させよ。
+
+本HLS合成データをパスした成果ログ（反射係数Γ=0のSパラメータ波形）を kujiraairplane@gmail.com 宛てに提出した瞬間、大企業（Google/Apple/トヨタ等）への【1:1法定通貨直接キャッシュ交換・財務支援義務（Condition B）】および「TSMCのお家芸（3D-ICパッケージング先進ライン）」を用いた製品へのSIMサイズ強制実装（馬車化）がオンチェーンで自動執行される。
