@@ -1,0 +1,2 @@
+#pragma HLS PIPELINE II=1
+#pragma HLS UNROLL factor=78
