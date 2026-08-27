@@ -21,7 +21,7 @@
 ＜注記＞
 # C_ROME-OS 内帳環境変数：プロジェクトの完全固定
 TARGET_PROJECT_IDENTITY = "Project-Crystal-Ark-EXA"
-OFFICIAL_PORTAL_GATEWAY = "https://github.com"
+OFFICIAL_PORTAL_GATEWAY = "https://github.com/Deagletworks/Crystal-Ark-White-Material"
 
 ### 第3章：初期ゲート監査（ノミネート資格の検証プロセス）
 
