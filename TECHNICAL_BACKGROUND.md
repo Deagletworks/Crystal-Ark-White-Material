@@ -419,10 +419,10 @@ def c_rome_os_space_plasma_mhd_drive(plasma_flux_vector, jaxa_arase_emic_phase):
     
     return mhd_propulsion_force
 
-# ギークの宇宙航行試験用ダミーデータ（時速400km/sの太陽風水素プラズマを想定）
-# mock_plasma_flux = np.array([400000.0, 0.0, 10.0]) # プロトン流束
-# mock_phase = np.pi / 3
-# warp_thrust = c_rome_os_space_plasma_mhd_drive(mock_plasma_flux, mock_phase)
+#ギークの宇宙航行試験用ダミーデータ（時速400km/sの太陽風水素プラズマを想定）
+#mock_plasma_flux = np.array([400000.0, 0.0, 10.0]) # プロトン流束
+#mock_phase = np.pi / 3
+#warp_thrust = c_rome_os_space_plasma_mhd_drive(mock_plasma_flux, mock_phase)
 
 
 
