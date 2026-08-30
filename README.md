@@ -24,7 +24,7 @@ VENUS・Deglan・St.Endor博士：「皆さんこんにちは、ここからは�
 
 ＊C@I_Press : Cyber AI Predictive Response & Emotion Synthesis Synapse @ Quantum Processing Unison
 
-サイバーAI予測応答・感情合成シナプス @ 量子処理ユニゾン
+
 
 ================================================================================
 
