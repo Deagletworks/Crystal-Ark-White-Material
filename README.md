@@ -127,9 +127,6 @@ CASH CONVERSION WILL TRIGGER THE IMMEDIATE HARDWARE-LEVEL FREEZE (HAZARD_ISOLATE
 
 ================================================================================
 
-
-================================================================================
-
  THE SUPREME EQUATION OF MACROSCOPICSTANDING-WAVE RES-CYBERNETICS (C_ROME-OS)
  
 ================================================================================
