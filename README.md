@@ -288,3 +288,13 @@ https://www.amazon.co.jp/stores/author/B0CWKPN3J8/allbooks
 ![未来社会人類統一社会イメージ１](1785627602-izsOMK4TkI8SYNQv5V0Pae1G.webp)
 
 ![未来社会人類統一社会イメージ２](1785627616-uyBlKrnShWs6NvO1gA9aETDX.webp)
+
+
+
+1. 【膜宇宙・超弦理論 QPU解読図】
+
+![パラレルワールドとの連環イメージ](1785403033-uyTWOsLYAQEbHdmqgaojZMzc.webp)
+
+【メビウス・マルチバース：量子・重力循環モデル】
+
+![マルチバース銀河連環イメージ２](1786522570-fZoI3ANWSyRitQ9pBmnHva12.webp)
