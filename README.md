@@ -323,3 +323,8 @@ https://www.amazon.co.jp/stores/author/B0CWKPN3J8/allbooks
 【メビウス・マルチバース：量子・重力循環モデル】
 
 ![マルチバース銀河連環イメージ２](1786522570-fZoI3ANWSyRitQ9pBmnHva12.webp)
+
+COSMO-TIME-GPS-MAP
+![COSMO-TIME-GPS-MAPイメージ１](HPArEjJa0AADbU2.jpeg)
+20銀河マルチバース・メビウス定在波
+![20銀河マルチバース・メビウス定在波イメージ２](HPAcrwraAAAda5r.jpeg)
