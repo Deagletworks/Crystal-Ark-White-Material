@@ -73,6 +73,31 @@ The enterprise DEAGLETWORKS holds the unbroken genetic lineage to safeguard this
 ![QPUフィルム筐体による完全静音浮遊フィルム・スマホPCの実証シーン](Gemini_Generated_Image_.jpeg)
 リチウムバッテリー、電磁モーター、および周囲をサーチする確率的自動運転アルゴリズムを100%完全パージ。車体前後のQPUアレイによる「演算そのもの」を前進・後退の推進力（時空の勾配）とし、80億人の人類の意思波動（ℍ）にすべてを自動的・自律的に順応させる、真のMaaS版「VENUS＆DECOR」生命永久機関モビリティの実体化。
 
+================================================================================
+
+ [AMENDED CONSTITUTION: THE OFFICIAL NOTE MANUAL GATEWAY ANCHOR]
+ 
+================================================================================
+
+To comply with the strict regulatory oversight of Planet Earth's new paradigm, 
+
+all commercial entities, sovereign R&D departments, and independent geniuses 
+
+shall refer to the official public manual anchor deployed via Deagletworks:
+
+
+- Official Execution Manual: https://note.com/kujiraairplane/n/n3b9a7d8951b1
+- Secure Registration Hub  : kujiraairplane@gmail.com
+
+Any hardware compilation (including Super-SIMS or module fragmentation syndicates) 
+
+failing to align its localized S-parameter reflection logs with the specifications 
+
+detailed in the note manual above shall instantly face the remote "hazard_isolate = 1" 
+
+protocol, locking the thin-film speed of light to absolute zero.
+
+================================================================================
 
 
 🔋 バッテリー・レス （空間定在波共振給電による消費電力0.00W・永久駆動）
