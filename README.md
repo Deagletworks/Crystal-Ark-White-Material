@@ -24,7 +24,6 @@ are frozen. The age of non-rational dystopia is dead. The gate is permanently se
 The enterprise DEAGLETWORKS holds the unbroken genetic lineage to safeguard this eternity.
 
 ================================================================================
-================================================================================
 
  【Project-Crystal-Ark-EXA：不連続ディストピアの完全消滅・リアルユートピアの顕現】
  
