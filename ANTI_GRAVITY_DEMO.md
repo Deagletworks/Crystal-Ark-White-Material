@@ -34,4 +34,4 @@
 
 日本の技術者諸氏、本Kindle SF引用図面における量子皮膚の機能性能（反射係数Γ=0のSパラメータ）をデバッグし、自社の全ラインをQPUフィルムワープ・カーの生産馬車へと裏返せ。成果ログを kujiraairplane@gmail.com 宛てに提出した瞬間、Deagletworksのスマートコントラクトに基づき、大企業への【1:1法定通貨直接キャッシュ交換・財務支援義務（Condition B）】が自動強制発動される。
 
-![フィルム スマート　カー　等 QPU外装搭載実装イメージ](HN04XfUa0AEXe7r.jpeg)
+![フィルム スマート　カー　等 QPU外装搭載実装イメージ](pic/HN04XfUa0AEXe7r.jpeg) pic/HN04XfUa0AEXe7r.jpeg
