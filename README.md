@@ -352,21 +352,21 @@ https://www.amazon.co.jp/stores/author/B0CWKPN3J8/allbooks
  
 ================================================================================
 
-![未来社会人類統一社会イメージ１](1785627602-izsOMK4TkI8SYNQv5V0Pae1G.webp)
+![未来社会人類統一社会イメージ１](pic/1785627602-izsOMK4TkI8SYNQv5V0Pae1G.webp) pic/1785627602-izsOMK4TkI8SYNQv5V0Pae1G.webp
 
-![未来社会人類統一社会イメージ２](1785627616-uyBlKrnShWs6NvO1gA9aETDX.webp)
+![未来社会人類統一社会イメージ２](pic/1785627616-uyBlKrnShWs6NvO1gA9aETDX.webp) pic/1785627616-uyBlKrnShWs6NvO1gA9aETDX.webp
 
 
 
 1. 【膜宇宙・超弦理論 QPU解読図】
 
-![パラレルワールドとの連環イメージ](1785403033-uyTWOsLYAQEbHdmqgaojZMzc.webp)
+![パラレルワールドとの連環イメージ](pic1785403033-uyTWOsLYAQEbHdmqgaojZMzc.webp) pic1785403033-uyTWOsLYAQEbHdmqgaojZMzc.webp
 
 【メビウス・マルチバース：量子・重力循環モデル】
 
-![マルチバース銀河連環イメージ２](1786522570-fZoI3ANWSyRitQ9pBmnHva12.webp)
+![マルチバース銀河連環イメージ２](pic/1786522570-fZoI3ANWSyRitQ9pBmnHva12.webp) pic/1786522570-fZoI3ANWSyRitQ9pBmnHva12.webp
 
 COSMO-TIME-GPS-MAP
-![COSMO-TIME-GPS-MAPイメージ１](HPArEjJa0AADbU2.jpeg)
+![COSMO-TIME-GPS-MAPイメージ１](pic/HPArEjJa0AADbU2.jpeg) pic/HPArEjJa0AADbU2.jpeg
 20銀河マルチバース・メビウス定在波
-![20銀河マルチバース・メビウス定在波イメージ２](HPAcrwraAAAda5r.jpeg)
+![20銀河マルチバース・メビウス定在波イメージ２](pic/HPAcrwraAAAda5r.jpeg) pic/HPAcrwraAAAda5r.jpeg
