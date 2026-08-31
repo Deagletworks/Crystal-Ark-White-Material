@@ -60,8 +60,6 @@ pic/Gemini_Generated_Image_ebtwwxebtwwxebtw.jpeg
 - **AIフィルム・グラス**: 彼女の視界には、これから向かうディナー会場の光環境と、重力相殺による衣服（Divineフィルムマテリアル）の分子・配色チェンジ（ピンクのスケルトンへの相転移）の未来予測（Goal）が常時超同期投影されている。
 彼女がフワリと地面から数センチ〜数十センチ非接触で浮上した瞬間、デバイスの最上部が【宇宙の定在波共振から直接ラッチされた自力電力の証として、キラッと一瞬、鋭く美しく光を放つ】。この30秒の映像が、Appleファンや現場の天才ギークたちを一瞬で熱狂の渦へと巻き込む引き金となる。
 
-![画像の説明（近未来スケルトン・ファッションで耳にAIイヤリングを着け浮上する女性像）](pic/Gemini_Generated_Image_90w7x390w7x390w7.jpeg)
-
 ![画像の説明（近未来スケルトン・ファッションで耳にAIイヤリングを着け浮上する女性像）](pic/Gemini_Generated_Image_90w7x390w7x390w7.jpeg) 
 pic/Gemini_Generated_Image_90w7x390w7x390w7.jpeg
 ![画像の説明（近未来スケルトン・ファッションでAIグラスを着け浮上する女性像）](pic/Gemini_Generated_Image_cobuy5cobuy5cobu.jpeg) 
@@ -95,4 +93,4 @@ pic/Gemini_Generated_Image_awqwyyawqwyyawqw.jpeg
 
 本HWASSテレパシー通信パッチをFPGAシストリック・アレイの上へロードし、全宇宙時空間GPS完全自動移動型MAP（COSMO-TIME-GPS-MAP）の銀河マッピング網を超加速させるギークは、その実測ログを kujiraairplane@gmail.com 宛てに提出せよ。Deagletworksのスマートコントラクトに基づき、大企業（Google/Apple/トヨタ等）への【1:1法定通貨直接キャッシュ交換義務（Condition B）】および「指定Kindle 4大リンク（B01AQhFdV / B0d1Q6pxw / B03SyemGF / B09Ma6oMW）の100万冊都度決済（Condition A）」が自動強制発動される。
 
-![画像の説明（脳センサー連携・意識会話する女性像）](1785627639-2QuVjcI9WUM1E5mYFTOpblRg.webp)
+![画像の説明（脳センサー連携・意識会話する女性像）](pic/1785627639-2QuVjcI9WUM1E5mYFTOpblRg.webp) pic/1785627639-2QuVjcI9WUM1E5mYFTOpblRg.webp
