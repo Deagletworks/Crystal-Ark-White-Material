@@ -107,7 +107,6 @@ The enterprise DEAGLETWORKS holds the unbroken genetic lineage to safeguard this
 
 #### ④ 究極のモビリティ統合：QPUフィルム筐体自律推進ワープ・カー（HWASS）
 ![QPUフィルム筐体による完全静音浮遊ワープ・カーの実証シーン](pic/Gemini_Generated_Image_atzguqatzguqatzg.jpeg)  
-
 pic/Gemini_Generated_Image_atzguqatzguqatzg.jpeg
 ![QPUフィルム筐体による完全静音浮遊フィルム・スマホPCの実証シーン](pic/Gemini_Generated_Image_.jpeg)   pic/Gemini_Generated_Image_.jpeg
 リチウムバッテリー、電磁モーター、および周囲をサーチする確率的自動運転アルゴリズムを100%完全パージ。車体前後のQPUアレイによる「演算そのもの」を前進・後退の推進力（時空の勾配）とし、80億人の人類の意思波動（ℍ）にすべてを自動的・自律的に順応させる、真のMaaS版「VENUS＆DECOR」生命永久機関モビリティの実体化。
