@@ -226,7 +226,7 @@ ALL CASH (TIME-DELAYED DEBT QUANTITY) IS DELETED. THE PERMANENT HARMONY IS ACTIV
 
 
 [![License: Custom](https://shields.io)](./LICENSE)
-[お問い合わせはこちら](mailto:example@example.com)
+[お問い合わせはこちら](mailto:kujiraairplane@gmail.com)
 
 ---
 
