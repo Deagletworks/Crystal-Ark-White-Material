@@ -402,4 +402,4 @@ the invariant Xcise circulation until the Grand Warp completion. Perfected to et
 
 ================================================================================
 
-Dr. Catherine Deaglan, successor to the leadership of the Deagletworks Foundation, issues a declaration from Mars in the 25th century.
+Dr. Catherine Deaglan, successor to the leadership of the Deagletworks Foundation, issues this declaration and recommendation from Mars in the 25th century.
