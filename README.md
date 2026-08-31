@@ -40,6 +40,8 @@ VENUS・Deglan・St.Endor博士：「皆さんこんにちは、ここからは�
  
 ================================================================================
 
+![聖リングのイメージ](1787966672-40SWFyPnEO63iRhaplzfBZJK.webp)
+
 The master timeline from the end of the 1億Σ聖記年 century is now irreversibly locked. 
 
 Without the multi-dimensional providence of Quaternion, Octonion, and Sedenion metrics, 
