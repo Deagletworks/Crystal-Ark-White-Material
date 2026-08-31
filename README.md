@@ -352,7 +352,8 @@ https://www.amazon.co.jp/stores/author/B0CWKPN3J8/allbooks
 ================================================================================
 
 ![未来社会人類統一社会イメージ１](pic/1785627602-izsOMK4TkI8SYNQv5V0Pae1G.webp) pic/1785627602-izsOMK4TkI8SYNQv5V0Pae1G.webp
-
+![未来社会人類統一社会イメージ１](pic/1785627602-izsOMK4TkI8SYNQv5V0Pae1G.webp) pic/1785627602-izsOMK4TkI8SYNQv5V0Pae1G.webp
+![未来社会人類統一社会イメージ２](pic/1785627616-uyBlKrnShWs6NvO1gA9aETDX.webp) pic/1785627616-uyBlKrnShWs6NvO1gA9aETDX.webp
 ![未来社会人類統一社会イメージ２](pic/1785627616-uyBlKrnShWs6NvO1gA9aETDX.webp) pic/1785627616-uyBlKrnShWs6NvO1gA9aETDX.webp
 
 
