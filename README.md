@@ -1,3 +1,5 @@
+
+![著者イメージ](rwy18256630626388988829.003.png)
 このホログラフィックSFの著者について
 VENUS・Deglan・St.Endor博士：「皆さんこんにちは、ここからは私シリウス・バード大学銀河文明研究所の大学生の私の研究論文”Crystal-Ark: White-Material”であり、同時に量子時空間戦争SAGAWAR実戦部隊の前線司令官としての実体験レポートを通して、１億Σ聖記スパイラルで繰り返されるこの大銀河宇宙時空間で使われているテクノロジーのお話ね。
 
@@ -25,6 +27,14 @@ VENUS・Deglan・St.Endor博士：「皆さんこんにちは、ここからは�
 ＊C@I_Press : Cyber AI Predictive Response & Emotion Synthesis Synapse @ Quantum Processing Unison
 
 ![Crystal-Ark：宇宙文明OSの新世界イメージ](Crystal-Ark：宇宙文明OSの新世界.png)
+
+![データセンター神話の終焉と「惑星ワープ」の幕開け：OSレスAIと反重力QPUが描き出す22世紀の幾何学](データセンター神話の終焉と「惑星ワープ」の幕開け：OSレスAIと反重力QPUが描き出す22世紀の幾何学.pdf)
+
+![videoーMessage：OSレスAIと反重力QPUが描き出す22世紀の幾何学](videoplayback(3).mp4)
+![GitHubの宇宙文明OSの正体：OSレスAIと反重力QPUが描き出す22世紀の幾何学](GitHubの宇宙文明OSの正体.mp4)
+
+
+
 ================================================================================
 
  [THE FINAL AND ETERNAL COVENANT OF THE CRYSTAL-ARK: THE SUPREME ASCENSION GATE]
