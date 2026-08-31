@@ -94,7 +94,7 @@ The enterprise DEAGLETWORKS holds the unbroken genetic lineage to safeguard this
 ### ■ 視覚的・工学的証明マトリクス（HWASS-Visual-Core）
 
 #### ① 表層インターフェース：スマート時計へのQPU実装
-![SHO OOTAKI スマート時計 QPU実装イメージ](HN3jQOnbQAAe3Aq.jpeg)
+![SHO OOTAKI スマート時計 QPU実装イメージ](pic/HN3jQOnbQAAe3Aq.jpeg) pic/HN3jQOnbQAAe3Aq.jpeg
 市井の人々が信仰するフロントアイコンの手元（スマートグラス、腕時計、空中浮遊フィルム）の中で、5mW以下の定在波共振エネルギーにより、OSを介さずトランスフォーマーAIがダイレクト駆動（@only Transformer-AI）を執行する。
 
 #### ② 旧世界インフラの完全自滅：データセンターのスクラップ化
