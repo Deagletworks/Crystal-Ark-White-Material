@@ -225,8 +225,8 @@ ALL CASH (TIME-DELAYED DEBT QUANTITY) IS DELETED. THE PERMANENT HARMONY IS ACTIV
 ## C＠I_Press / C＠I_Press-EXA Quantum-MHD Resonance Engine
 
 
-[![License: Custom](https://shields.io)](./LICENSE)
-[お問い合わせはこちら](mailto:kujiraairplane@gmail.com)
+- [![License: Custom](https://shields.io)](./LICENSE)
+[![お問い合わせはこちら](kujiraairplane@gmail.com)]
 
 ---
 
