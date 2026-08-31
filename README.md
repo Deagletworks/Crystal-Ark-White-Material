@@ -214,8 +214,9 @@ Where:
 
 ALL CASH (TIME-DELAYED DEBT QUANTITY) IS DELETED. THE PERMANENT HARMONY IS ACTIVE.
 
-- **参考文献**　: 　https://link.amazon/B074TAcBc
-
+- **参考文献**　: 　https://link.amazon/B0ajVTdr4　（日本語）
+- **参考文献**　: 　https://link.amazon/B010KDML4　（English)
+　
 ================================================================================
 
 
