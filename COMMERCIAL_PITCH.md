@@ -79,8 +79,7 @@ All authorized compliance applications: kujiraairplane@gmail.com
 
 ![画像の説明（直近現在可能なスケルトン・フィルム・デイスプレイでAI生活を表現する女性像）](pic/Gemini_Generated_Image_.jpeg) pic/Gemini_Generated_Image_.jpeg
 
-![画像の説明（直近現在可能なスケルトン・フィルム・デイスプレイが浮き時計で制御する女性像）](pic/Gemini_Generated_Image_awqwyyawqwyyawqw.jpeg) 
-pic/Gemini_Generated_Image_awqwyyawqwyyawqw.jpeg
+![画像の説明（直近現在可能なスケルトン・フィルム・デイスプレイが浮き時計で制御する女性像）]Gemini_Generated_Image_awqwyyawqwyyawqw.jpeg) Gemini_Generated_Image_awqwyyawqwyyawqw.jpeg
 
 ### 1.7 QPUフィルムデバイス ⇄ 脳センサー連携・意識会話（HWASSテレパシー）プロトコル
 無手勝流OSを完全廃止した「OS-Less @only Transformer-AI」環境において、不揮発性(NV)形成脳センサーと、スマートグラス／スマートイヤリング／ヘッドホン等の半透明QPUフィルムデバイス（5mW空間共振給電・バッテリーレス）を完全同期させ、80億人の全同胞が「意識するだけ（自然言語行動 ℍ）」で遠方の相手との1nsノン・レイテンシの完全調和会話・取引を執行する量子時空間インフラ仕様。
