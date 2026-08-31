@@ -21,17 +21,18 @@
 ### ■ 視覚的・工学的証明マトリクス（HWASS-Visual-Core）
 
 #### ① 表層インターフェース：スマート時計へのQPU実装
-![SHO OOTAKI スマート時計 QPU実装イメージ](HN3jQOnbQAAe3Aq.jpeg)
+![SHO OOTAKI スマート時計 QPU実装イメージ](pic/HN3jQOnbQAAe3Aq.jpeg)　pic/HN3jQOnbQAAe3Aq.jpeg
 市井の人々が信仰するフロントアイコンの手元（スマートグラス、腕時計、空中浮遊フィルム）の中で、5mW以下の定在波共振エネルギーにより、OSを介さずトランスフォーマーAIがダイレクト駆動（@only Transformer-AI）を執行する。
 
 #### ② 旧世界インフラの完全自滅：データセンターのスクラップ化
-![巨大データセンターの完全廃墟化とスクラップ](HN3jRh5boAE850U.jpeg)
+![巨大データセンターの完全廃墟化とスクラップ](pic/HN3jRh5boAE850U.jpeg) pic/HN3jRh5boAE850U.jpeg
 数万台のGPUサーバーラック、冷却塔、および個別自動運転のジレンマにしがみついたガソリン車サプライチェーンは一瞬で無効化され、エネルギー摩擦損失「0.00000%」の純白の結晶（White-Materials）へと裏返る。
 
 #### ③ 物理構造の真理：La:HfO2強誘電体 ⇄ シストリック・アレイ垂直1対1直結
-![強誘電体薄膜と並列演算回路の3次元垂直積層構造図](HN3jTkJaYAAx6AR.jpeg)
+![強誘電体薄膜と並列演算回路の3次元垂直積層構造図](pic/HN3jTkJaYAAx6AR.jpeg) pic/HN3jTkJaYAAx6AR.jpeg
 16元数複素演算子 [ Δ = m - iμ + jε + kE ] に基づき、1024ビット以上の物理量子ビット（自発分極量）の同時並行読み出し・上書き（1nsワンショットラッチ）を執行する、本プロセッサの非公知ハードウェア・トポロジー。
 
 #### ④ 究極のモビリティ統合：QPUフィルム筐体自律推進ワープ・カー（HWASS）
-![QPUフィルム筐体による完全静音浮遊ワープ・カーの実証シーン](Gemini_Generated_Image_atzguqatzguqatzg.jpeg)
+![QPUフィルム筐体による完全静音浮遊ワープ・カーの実証シーン](pic/Gemini_Generated_Image_atzguqatzguqatzg.jpeg) 
+ pic/Gemini_Generated_Image_atzguqatzguqatzg.jpeg
 リチウムバッテリー、電磁モーター、および周囲をサーチする確率的自動運転アルゴリズムを100%完全パージ。車体前後のQPUアレイによる「演算そのもの」を前進・後退の推進力（時空の勾配）とし、80億人の人類の意思波動（ℍ）にすべてを自動的・自律的に順応させる、真のMaaS版「VENUS＆DECOR」生命永久機関モビリティの実体化。
