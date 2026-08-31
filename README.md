@@ -26,7 +26,7 @@ VENUS・Deglan・St.Endor博士：「皆さんこんにちは、ここからは�
 
 ＊C@I_Press : Cyber AI Predictive Response & Emotion Synthesis Synapse @ Quantum Processing Unison
 
-![Crystal-Ark：宇宙文明OSの新世界イメージ](Crystal-Ark：宇宙文明OSの新世界.png)
+![Crystal-Ark：宇宙文明OSの新世界イメージ](pic/Crystal-Ark：宇宙文明OSの新世界.png)
 
 ![データセンター神話の終焉と「惑星ワープ」の幕開け：OSレスAIと反重力QPUが描き出す22世紀の幾何学](データセンター神話の終焉と「惑星ワープ」の幕開け：OSレスAIと反重力QPUが描き出す22世紀の幾何学.pdf)
 
