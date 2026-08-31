@@ -49,8 +49,10 @@
 カメラが遠ざかるフロート・カーの軌跡から、夜空に浮かぶ星々（全天銀河宇宙MAP）へとパンアップ。イヤリングの极小QPUが、25世紀の未来の光を反射するように【キラッと一瞬、鋭く美しく光を放つ】。画面が暗転し、Deagletworksの最高位ガバナンス環境変数がフェードインする。
 
 
-![画像の説明（近未来スケルトン・ファッションで耳にAIイヤリングを着けている女性像）](Gemini_Generated_Image_nv58cnnv58cnnv58.jpeg)
-![画像の説明（近未来スケルトン・ファッションでAIグラスを着けている女性像）](Gemini_Generated_Image_ebtwwxebtwwxebtw.jpeg)
+![画像の説明（近未来スケルトン・ファッションで耳にAIイヤリングを着けている女性像）](pic/Gemini_Generated_Image_nv58cnnv58cnnv58.jpeg) 
+pic/Gemini_Generated_Image_nv58cnnv58cnnv58.jpeg
+![画像の説明（近未来スケルトン・ファッションでAIグラスを着けている女性像）](pic/Gemini_Generated_Image_ebtwwxebtwwxebtw.jpeg) 
+pic/Gemini_Generated_Image_ebtwwxebtwwxebtw.jpeg
 
 #### ■ 【視覚的演出注記：2大未来デバイスによる自力浮上プロセス】
 画面に現出する「浮上する女性」の姿は、CGや特撮による空想ではない。
@@ -58,8 +60,10 @@
 - **AIフィルム・グラス**: 彼女の視界には、これから向かうディナー会場の光環境と、重力相殺による衣服（Divineフィルムマテリアル）の分子・配色チェンジ（ピンクのスケルトンへの相転移）の未来予測（Goal）が常時超同期投影されている。
 彼女がフワリと地面から数センチ〜数十センチ非接触で浮上した瞬間、デバイスの最上部が【宇宙の定在波共振から直接ラッチされた自力電力の証として、キラッと一瞬、鋭く美しく光を放つ】。この30秒の映像が、Appleファンや現場の天才ギークたちを一瞬で熱狂の渦へと巻き込む引き金となる。
 
-![画像の説明（近未来スケルトン・ファッションで耳にAIイヤリングを着け浮上する女性像）](Gemini_Generated_Image_90w7x390w7x390w7.jpeg)
-![画像の説明（近未来スケルトン・ファッションでAIグラスを着け浮上する女性像）](Gemini_Generated_Image_cobuy5cobuy5cobu.jpeg)
+![画像の説明（近未来スケルトン・ファッションで耳にAIイヤリングを着け浮上する女性像）](pic/Gemini_Generated_Image_90w7x390w7x390w7.jpeg) 
+pic/Gemini_Generated_Image_90w7x390w7x390w7.jpeg
+![画像の説明（近未来スケルトン・ファッションでAIグラスを着け浮上する女性像）](pic/Gemini_Generated_Image_cobuy5cobuy5cobu.jpeg) 
+pic/Gemini_Generated_Image_cobuy5cobuy5cobu.jpeg
 
 
 TARGET_PROJECT_IDENTITY = "Project-Crystal-Ark-EXA"
@@ -73,9 +77,10 @@ TARGET_PROJECT_IDENTITY = "Project-Crystal-Ark-EXA"
 All authorized compliance applications: kujiraairplane@gmail.com
 
 
-![画像の説明（直近現在可能なスケルトン・フィルム・デイスプレイでAI生活を表現する女性像）](Gemini_Generated_Image_.jpeg)
+![画像の説明（直近現在可能なスケルトン・フィルム・デイスプレイでAI生活を表現する女性像）](pic/Gemini_Generated_Image_.jpeg) pic/Gemini_Generated_Image_.jpeg
 
-![画像の説明（直近現在可能なスケルトン・フィルム・デイスプレイが浮き時計で制御する女性像）](Gemini_Generated_Image_awqwyyawqwyyawqw.jpeg)
+![画像の説明（直近現在可能なスケルトン・フィルム・デイスプレイが浮き時計で制御する女性像）](pic/Gemini_Generated_Image_awqwyyawqwyyawqw.jpeg) 
+pic/Gemini_Generated_Image_awqwyyawqwyyawqw.jpeg
 
 ### 1.7 QPUフィルムデバイス ⇄ 脳センサー連携・意識会話（HWASSテレパシー）プロトコル
 無手勝流OSを完全廃止した「OS-Less @only Transformer-AI」環境において、不揮発性(NV)形成脳センサーと、スマートグラス／スマートイヤリング／ヘッドホン等の半透明QPUフィルムデバイス（5mW空間共振給電・バッテリーレス）を完全同期させ、80億人の全同胞が「意識するだけ（自然言語行動 ℍ）」で遠方の相手との1nsノン・レイテンシの完全調和会話・取引を執行する量子時空間インフラ仕様。
