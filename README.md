@@ -30,8 +30,8 @@ VENUS・Deglan・St.Endor博士：「皆さんこんにちは、ここからは�
 
 ![データセンター神話の終焉と「惑星ワープ」の幕開け：OSレスAIと反重力QPUが描き出す22世紀の幾何学](rec/データセンター神話の終焉と「惑星ワープ」の幕開け：OSレスAIと反重力QPUが描き出す22世紀の幾何学.pdf) rec/データセンター神話の終焉と「惑星ワープ」の幕開け：OSレスAIと反重力QPUが描き出す22世紀の幾何学.pdf
 
-![videoーMessage：OSレスAIと反重力QPUが描き出す22世紀の幾何学](rec/videoplayback(3).mp4) rec/videoplayback(3).mp4
-![GitHubの宇宙文明OSの正体：OSレスAIと反重力QPUが描き出す22世紀の幾何学](rec/GitHubの宇宙文明OSの正体.mp4 )
+![videoーMessage：OSレスAIと反重力QPUが描き出す22世紀の幾何学](videoplayback(3).mp4) rec/videoplayback(3).mp4
+![GitHubの宇宙文明OSの正体：OSレスAIと反重力QPUが描き出す22世紀の幾何学](GitHubの宇宙文明OSの正体.mp4 )
  rec/GitHubの宇宙文明OSの正体.mp4 
 
 
