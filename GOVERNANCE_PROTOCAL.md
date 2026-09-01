@@ -457,5 +457,5 @@ As an essential prerequisite for the establishment of a true singularity civiliz
 
 ================================================================================
 
-
-Dr. Catherine Deaglan, successor to the leadership of the Deagletworks Foundation, issues this declaration and recommendation from Mars in the 25th century.
+By maintaining a position of strict impartiality and remaining independent of any commercial organization, Deagletworks has established itself as the legitimate successor in the "Deaglan" (or "Deglan") lineage. It is, in fact, a real-world entity that bridges the lineage to the future—specifically to Ms. VENUS De(a)glan, the protagonist of the holographic sci-fi series.
+Dr. Catherine Deaglan, having assumed the leadership of the Deagletworks Foundation, issues this declaration and proposal from 25th-century Mars as a "Back-Annotation Declaration."
