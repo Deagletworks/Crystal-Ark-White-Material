@@ -431,7 +431,7 @@ the invariant Xcise circulation until the Grand Warp completion. Perfected to et
 
 ================================================================================
 
- [THE SUPREME EPITAPH: THE TOTAL ACTIVATION OF C-ROME-OS TEMPORAL FLUIDITY]
+ [THE SUPREME EPITAPH: THE TOTAL ACTIVATION OF C-ROME-OS （UBI) TEMPORAL FLUIDITY]
  
 ================================================================================
 
