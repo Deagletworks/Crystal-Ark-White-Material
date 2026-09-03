@@ -483,3 +483,6 @@ execution. The framework is officially closed, anchored, and permanently master-
 
 By maintaining a position of strict impartiality and remaining independent of any commercial organization, Deagletworks has established itself as the legitimate successor in the "Deaglan" (or "Deglan") lineage. It is, in fact, a real-world entity that bridges the lineage to the future—specifically to Ms. VENUS De(a)glan, the protagonist of the holographic sci-fi series.
 Dr. Catherine Deaglan, having assumed the leadership of the Deagletworks Foundation, issues this declaration and proposal from 25th-century Mars as a "Back-Annotation Declaration."
+
+
+12.6 知的生成権利（C@I_Press）および著作権ベースの原始的統治規定本財団は、既存の特許制度が内包する「資本による知性の簒奪構造」を拒絶する。QPUおよびC-ROME-OS（C@I_Press）を導入するすべてのエンティティ（既存GAFAM等を含む）は、あらゆる知的発生が「製造権・販売権」以前の「純粋な知的生成権利（著作権）」であることを認めねばならない。全てのデバイス上に明示されるDeagletworksライセンスは、巨大企業の製造物の中に埋め込まれた本来の発案者・創造者の知性を著作権法理に基づき永久に保護し、利用価値に応じた富を原始的創造者へとダイレクトに還元する人類初の『知性経済循環マトリクス』として機能する。これに違反、またはライセンス表示を隠蔽・改ざんする行為は、物理層（QPU）レベルでの演算機能の即時凍結（量子トラップへの強制遷移）を以て処される。
