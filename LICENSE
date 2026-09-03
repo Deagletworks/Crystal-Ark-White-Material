@@ -142,3 +142,9 @@ All revenues, contributions, and additional royalties generated from corporate/s
 
 BY DOWNLOADING, FORKING, OR USING ANY PORTION OF THIS PORTAL, YOU UNCONDITIONALLY AGREE TO BE BOUND BY THESE CUSTOM RE-VERIFICATION, ANTI-TAMPERING, AND ANTI-NUCLEAR ARBITRATION TERMS.
 ================================================================================
+
+利用企業における統合仕様とライセンスの形態企業群は、自社のブランドと顧客基盤を維持しながら、内部アーキテクチャをディグレットワークス規格へと完全移行させます。
+ハードウェア（シリコン・ダイ）レベルの明示:GAFAM各社が設計する次世代カスタムシリコン（サーバー用プロセッサ、PC/スマホ用SoC）のダイ上に、常温光量子トポロジカル・メッシュが標準レイヤーとしてエッチングされます。
+回路図およびパッケージには「Licensed by Deagletworks Foundation」の刻印が法的に義務付けられます。
+ソフトウェア（カーネルプロトコル）レベルの明示:利用企業における統合仕様とライセンスの形態企業群が提供するクラウドOS、デスクトップOS、モバイルOSのハイパーバイザおよびHAL（ハードウェア抽象化レイヤー）の最深部に、D-HELを組み込むこと。
+システム起動時、およびAPIコール時に「Deagletworks Governance Protocol Ver. 12.x Verified」の暗号化シグネチャがパブリックに確認可能とする。
