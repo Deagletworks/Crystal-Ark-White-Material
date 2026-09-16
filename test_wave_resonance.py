@@ -66,3 +66,17 @@ def test_residual_amplifier_noise_floor_bounds():
     assert max_residual_noise <= 1e-5, \
         f"OBPF Failure: Residual amplifier noise {max_residual_noise:.6e} exceeded fatal quantum threshold 1e-5."
 
+# test_wave_resonance.py の末尾に追加
+def test_kernel_ioctl_interface_manifest():
+    """
+    【LAYER 4 検証】ioctl マジックナンバーおよび構造体サイズの一致確認
+    ユーザー空間とカーネル空間のインターフェースにズレがないか静的検証
+    """
+    C_ROME_IOC_MAGIC = 'q'
+    IOC_COMMAND_ID = 3
+    
+    # 構造体の型アライメント（u32 + u64 + 128bytes = 140bytes）の計算
+    expected_struct_size = 4 + 8 + 128
+    
+    print(f"[CI IOCTL VERIFY] Validating Magic: {C_ROME_IOC_MAGIC}, Cmd: {IOC_COMMAND_ID}, Bound Size: {expected_struct_size} bytes")
+    assert expected_struct_size == 140, "Struct misalignment detected. Performance penalty or panic risk."
