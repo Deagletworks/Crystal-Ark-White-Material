@@ -1,26 +1,42 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-def run_obpf_link_budget_simulation(enable_obpf=True):
+
+
+
+# wave_resonance_obpf_final.py の物理計算ブロックを修正
+def run_obpf_link_budget_simulation_v2(is_throttled=False, enable_obpf=True):
     num_qubits = 1000000
     grid_density = 300
     
-    # 1. リンクバジェット基本設計 (3km SMF + 510m DCF)
-# wave_resonance_obpf_final.py 内のバジェット計算式を修正
-total_loss_db = (3.0 * 0.2) + (0.51 * 0.5)  # 0.855 dB (SMF+DCF)
+    total_loss_db = (3.0 * 0.2) + (0.51 * 0.5)
+    raw_ase_noise = (total_loss_db * 5.0) * 0.05
 
-    # wave_resonance_obpf_final.py 内の透過特性を以下に変更
-if enable_obpf:
-    # 10psパルス時はスペクトルが広がりフィルタで一部遮断される(損失大)、40ps時は綺麗に抜ける物理を再現
-    signal_distortion_db = 0.4 if not is_throttled else 0.05
-    total_loss_db += (0.5 + signal_distortion_db)
-    
-    obpf_suppression_ratio = 0.10
-    # 損失増加によるノイズ床の上昇と、OBPFの帯域外カット効果を正しく乗算
-    amplifier_noise_amplitude = ((total_loss_db * 5.0) * 0.05) * obpf_suppression_ratio
+    if enable_obpf:
+        total_loss_db += 0.5
+        # 10ps/40psのスペクトル幅に応じた高次分散歪み（TOD）の影響をシミュレート
+        # スロットリング（40ps）時はパルスが広いため、OBPFの急峻な壁によるTOD歪みの影響を受けにくい（0.02）、10ps時は歪みが大きい（0.15）
+        tod_distortion_factor = 0.02 if is_throttled else 0.15
+        amplifier_noise_amplitude = (raw_ase_noise * 0.10) + tod_distortion_factor
+        title_str = "OBPF Active + TOD Correction Applied"
+    else:
+        amplifier_noise_amplitude = raw_ase_noise
+        title_str = "Raw Link without OBPF"
 
+    slots_x = np.linspace(0, num_qubits, grid_density)
+    slots_y = np.linspace(0, num_qubits, grid_density)
+    SX, SY = np.meshgrid(slots_x, slots_y)
+    R_slots = np.sqrt((SX - num_qubits/2)**2 + (SY - num_qubits/2)**2)
 
+    np.random.seed(101)
+    ase_noise = np.random.normal(0, amplifier_noise_amplitude, (grid_density, grid_density))
+    shield_attenuation = 1.0 - np.exp(-2.0 * (R_slots**2) / (num_qubits**2))
+    residual_noise = ase_noise * shield_attenuation
 
+    Z_space = 377.0 * (1.0 - np.tanh(2.5e-9 / 2.5e-9 * np.tanh(1200.0 * 2.5e-9 / (R_slots + 1e-5))))
+    Z_space = np.clip(Z_space + (np.abs(residual_noise) * 20.0), 0.0, 377.0)
+
+    return Z_space, residual_noise, title_str
 
 
 
