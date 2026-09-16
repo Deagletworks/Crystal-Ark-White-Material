@@ -42,6 +42,7 @@ def run_obpf_link_budget_simulation_v2(is_throttled=False, enable_obpf=True):
 
 
 
+
     # 2. 【光狭帯域フィルタ（OBPF）によるノイズ抑制モデリング】
     if enable_obpf:
         # OBPFのインサーションロス（挿入損失: 0.5 dB）によるわずかなアンプノイズの再加算
