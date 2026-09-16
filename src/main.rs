@@ -62,3 +62,37 @@ fn execute_hardware_failover() {
     
     println!("✅ [SUCCESS] Quantum control path successfully rerouted to Backup Transducer.");
 }
+
+
+
+
+
+
+// src/main.rs (一部抜粋)
+use std::os::unix::io::AsRawFd;
+use nix::ioctl_read;
+use nix::ioctl_none;
+
+const C_ROME_IOC_MAGIC: u8 = b'q';
+// ioctl マクロ定義 (nix クレートを利用)
+ioctl_none!(execute_failover, C_ROME_IOC_MAGIC, 1);
+ioctl_read!(get_kernel_log, C_ROME_IOC_MAGIC, 2, [u8; 256]);
+
+fn execute_hardware_failover_secure(file: &std::fs::File) {
+    println!("🔄 [FAILOVER] Sending secure ioctl token to C_ROME-OS kernel...");
+    
+    let fd = file.as_raw_fd();
+    unsafe {
+        // Rawメモリ書き換えを排除し、ioctl 経由で安全にカーネルへ要求を送出
+        if execute_failover(fd).is_ok() {
+            println!("✅ [SUCCESS] Kernel accepted failover token. Hardware path refactored.");
+            
+            let mut log_buffer = [0u8; 256];
+            if get_kernel_log(fd, &mut log_buffer).is_ok() {
+                println!("📝 [KERNEL LOG] {}", String::from_utf8_lossy(&log_buffer).trim_matches('\0'));
+            }
+        } else {
+            eprintln!("❌ [CRITICAL] ioctl failover request rejected by Kernel Subsystem.");
+        }
+    }
+}
