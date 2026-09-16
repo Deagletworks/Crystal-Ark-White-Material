@@ -1,0 +1,12 @@
+global:
+  scrape_interval: 2s # リアルタイム監視のため2秒間隔に短縮
+  evaluation_interval: 2s
+
+scrape_configs:
+  - job_name: 'c_rome_layer3_telemetry'
+    static_configs:
+      # ホストマシンのポート9100で待機しているRust監視アプリのテレメトリを指定
+      - targets: ['host.docker.internal:9100']
+
+# Dockerコンテナ内からホスト側のIPを参照できるようにするための設定
+# (Linux環境ではターゲット物理ノードの固定IPを直接記述するか、extra_hostsを使用してください)
