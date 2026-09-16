@@ -96,3 +96,89 @@ fn execute_hardware_failover_secure(file: &std::fs::File) {
         }
     }
 }
+
+
+
+// src/main.rs (テレメトリ拡張版)
+use std::fs::{File, OpenOptions};
+use std::io::{self, Read};
+use std::net::TcpListener;
+use std::os::unix::fs::OpenOptionsExt;
+use std::os::unix::io::AsRawFd;
+use std::sync::{Arc, Mutex};
+use std::thread;
+use nix::ioctl_read;
+
+const ALERT_DEVICE_PATH: &str = "/dev/c_rome_layer3_alert";
+const C_ROME_IOC_MAGIC: u8 = b'q';
+ioctl_read!(get_kernel_log, C_ROME_IOC_MAGIC, 2, [u8; 256]);
+
+// テレメトリ用グローバルカウンタの定義
+struct TelemetryMetrics {
+    throttling_events: u64,
+    last_log: String,
+}
+
+fn main() -> io::Result<()> {
+    println!("[LAUNCH] Layer 3 Telemetry Daemon initialized.");
+    
+    let metrics = Arc::new(Mutex::new(TelemetryMetrics {
+        throttling_events: 0,
+        last_log: "STATUS_NOMINAL".to_string(),
+    }));
+
+    // 1. Prometheus用 超軽量HTTPメトリクスサーバーをバックグラウンドで起動
+    let server_metrics = Arc::clone(&metrics);
+    thread::spawn(move || {
+        let listener = TcpListener::bind("0.0.0.0:9100").unwrap();
+        for stream in listener.incoming() {
+            if let Ok(mut stream) = stream {
+                let m = server_metrics.lock().unwrap();
+                // Prometheus標準フォーマットのテキストを生成
+                let response = format!(
+                    "HTTP/1.1 200 OK\r\nContent-Type: text/plain; version=0.0.4\r\n\r\n\
+                    # HELP c_rome_layer3_throttling_events_total Total number of hardware throttling activations.\n\
+                    # TYPE c_rome_layer3_throttling_events_total counter\n\
+                    c_rome_layer3_throttling_events_total {}\n\
+                    # HELP c_rome_layer3_status Current operational status payload.\n\
+                    # TYPE c_rome_layer3_status gauge\n\
+                    c_rome_layer3_info{{last_event=\"{}\"}} 1\n",
+                    m.throttling_events, m.last_log
+                );
+                use std::io::Write;
+                let _ = stream.write_all(response.as_bytes());
+            }
+        }
+    });
+
+    // 2. キャラクターデバイスの監視ループ
+    let mut file = OpenOptions::new()
+        .read(true)
+        .custom_flags(libc::O_NOATIME)
+        .open(ALERT_DEVICE_PATH)?;
+
+    let mut buffer = [0u8; 128];
+    let fd = file.as_raw_fd();
+
+    loop {
+        if let Ok(bytes_read) = file.read(&mut buffer) {
+            if bytes_read > 0 {
+                let alert_msg = String::from_utf8_lossy(&buffer[..bytes_read]);
+                if alert_msg.contains("CRITICAL_ERROR") {
+                    let mut m = metrics.lock().unwrap();
+                    m.throttling_events += 1;
+
+                    // 3. ioctl経由でカーネル内から厳密なエラーログ・タイムスタンプを安全に回収
+                    let mut log_buffer = [0u8; 256];
+                    unsafe {
+                        if get_kernel_log(fd, &mut log_buffer).is_ok() {
+                            let kernel_log = String::from_utf8_lossy(&log_buffer);
+                            m.last_log = kernel_log.trim_matches('\0').to_string();
+                            println!("📝 [METRICS RECORDED] Kernel Log: {}", m.last_log);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
