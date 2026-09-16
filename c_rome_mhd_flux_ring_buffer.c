@@ -1,6 +1,6 @@
 /**
  * @file c_rome_mhd_flux_ring_buffer.c
- * @brief C_ROME-OS Layer 3 System with 8-Page Coherent DMA Ring Buffer
+ * @brief C_ROME-OS Core Module with 8-Page DMA Ring Buffer for 1M Qubit TDM
  */
 
 #include <linux/module.h>
@@ -9,13 +9,14 @@
 #include <linux/io.h>
 #include <linux/interrupt.h>
 #include <linux/dma-mapping.h>
+#include <linux/slab.h>
 
 #define MODULE_NAME       "c_rome_mhd_core"
 #define C_ROME_MMIO_BASE  0x3F000000
 #define MMIO_REGION_SIZE  0x00000100
 #define IRQ_LINE_TDM      42
-#define TDM_PAGE_SIZE     4096      /* 1ページあたりのバッファサイズ */
-#define DMA_RING_PAGES    8         /* ページ数を8ページに拡張（リングバッファ構造） */
+#define PAGE_SIZE_TDM     4096
+#define RING_BUFFER_PAGES 8  /* 8ページのマルチバッファ構成 */
 
 struct mhd_reg_map {
     u32 flux_x;       /* 0x00 */
@@ -26,16 +27,21 @@ struct mhd_reg_map {
     u32 dma_addr_h;   /* 0x14 */
     u32 dma_ctrl;     /* 0x18 */
     u32 int_status;   /* 0x1C */
-    u32 dma_page_idx; /* 0x24: 現在ハードウェアが書き込み中のページインデックス（追加） */
+};
+
+/* リングバッファ管理構造体 */
+struct c_rome_ring_buffer {
+    void *virt_addr[RING_BUFFER_PAGES];
+    dma_addr_t phys_handle[RING_BUFFER_PAGES];
+    u32 head; /* ハードウェアが現在書き込んでいるページ */
+    u32 tail; /* カーネル/CPUが現在処理しているページ */
 };
 
 static void __iomem *mmio_base;
-static void *dma_virt_pages[DMA_RING_PAGES];
-static dma_addr_t dma_phys_handles[DMA_RING_PAGES];
-static u32 kernel_read_idx = 0; /* カーネル（CPU）側が次に読み出すべきページインデックス */
+static struct c_rome_ring_buffer ring;
 
 /**
- * @brief TDMパルス同期 拡張リングバッファ割り込みハンドラ
+ * @brief 8ページ巡回型 TDMパルス同期 割り込みハンドラ
  */
 static irqreturn_t c_rome_tdm_ring_irq_handler(int irq, void *dev_id)
 {
@@ -44,26 +50,32 @@ static irqreturn_t c_rome_tdm_ring_irq_handler(int irq, void *dev_id)
 
     if (!(status & 0x00000001)) return IRQ_NONE;
 
-    /* ハードウェアが現在書き込みを完了した、または実行中のページインデックスを取得 */
-    u32 hw_write_idx = ioread32(&regs->dma_page_idx) % DMA_RING_PAGES;
+    /* 1. 現在ハードウェアが処理を完了したバッファ(tailページ)のデータを回収 */
+    u32 *current_page = (u32 *)ring.virt_addr[ring.tail];
+    
+    // ここで前述のSEC-DED ECC/パリティ検証アルゴリズムをパイプライン実行
+    // (デモ簡略化のため、ここではインデックスのみ更新)
+    
+    /* 2. テールポインタをインクリメントし、リングを1歩進める (8で巡回) */
+    ring.tail = (ring.tail + 1) % RING_BUFFER_PAGES;
 
-    /* カーネルの読み出しポインタがハードウェアの書き込み位置に追いつくまでリングを周回処理 */
-    while (kernel_read_idx != hw_write_idx) {
-        u32 *packet_ptr = (u32 *)dma_virt_pages[kernel_read_idx];
-        
-        // 該当ページのTDMデータ（X, Yベクトル等）をバースト処理・検証
-        for (int i = 0; i < (TDM_PAGE_SIZE / sizeof(u32)); i += 4) {
-            // 前述の ECC検証ロジックをここでインライン実行
-            iowrite32(packet_ptr[i] >> 8, &regs->flux_x);
-            iowrite32(packet_ptr[i+1] >> 8, &regs->flux_y);
-        }
-
-        /* 読み出しインデックスをインクリメントし、リング構造（0〜7）を維持 */
-        kernel_read_idx = (kernel_read_idx + 1) % DMA_RING_PAGES;
+    /* 3. 次の空きバッファページ(head)のアドレスをハードウェアへ先行設定 */
+    ring.head = (ring.head + 1) % RING_BUFFER_PAGES;
+    
+    /* オーバーラン確認（処理がハードウェアの速度に追いついていない場合） */
+    if (unlikely(ring.head == ring.tail)) {
+        pr_crit_ratelimited("%s: DMA Ring Buffer Overrun! 1M Qubit TDM stream corrupted.\n", MODULE_NAME);
+        iowrite32(0x00000000, &regs->dma_ctrl); // 緊急停止
+        goto clear_int;
     }
 
-    /* 割り込みクリア（W1C） */
-    iowrite32(0x00000001, &regs->int_status);
+    /* ハードウェアへ次のターゲット物理アドレスをコミット */
+    dma_addr_t next_phys = ring.phys_handle[ring.head];
+    iowrite32((u32)(next_phys & 0xFFFFFFFF), &regs->dma_addr_l);
+    iowrite32((u32)((next_phys >> 32) & 0xFFFFFFFF), &regs->dma_addr_h);
+
+clear_int:
+    iowrite32(0x00000001, &regs->int_status); // W1C
     return IRQ_HANDLED;
 }
 
@@ -76,40 +88,47 @@ static int __init c_rome_ring_init(void)
     if (!mmio_base) return -ENOMEM;
     regs = (struct mhd_reg_map __iomem *)mmio_base;
 
-    /* 8ページのコヒーレントDMAバッファを連続アロケーションし、ハードウェアのベースリングへ登録 */
-    for (i = 0; i < DMA_RING_PAGES; i++) {
-        dma_virt_pages[i] = dma_alloc_coherent(NULL, TDM_PAGE_SIZE, &dma_phys_handles[i], GFP_KERNEL);
-        if (!dma_virt_pages[i]) goto alloc_err;
-        
-        // ハードウェアのマルチページアドレスレジスタに順次登録（簡易表現として0番ページを設定）
-        if (i == 0) {
-            iowrite32((u32)(dma_phys_handles[i] & 0xFFFFFFFF), &regs->dma_addr_l);
-            iowrite32((u32)((dma_phys_handles[i] >> 32) & 0xFFFFFFFF), &regs->dma_addr_h);
+    /* 8ページ分の一貫性DMAバッファを一括アロケーション */
+    for (i = 0; i < RING_BUFFER_PAGES; i++) {
+        ring.virt_addr[i] = dma_alloc_coherent(NULL, PAGE_SIZE_TDM, &ring.phys_handle[i], GFP_KERNEL);
+        if (!ring.virt_addr[i]) {
+            ret = -ENOMEM;
+            goto free_dma;
         }
     }
 
-    ret = request_irq(IRQ_LINE_TDM, c_rome_tdm_ring_irq_handler, IRQF_TRIGGER_RISING, MODULE_NAME, NULL);
-    if (ret) goto alloc_err;
+    ring.head = 0;
+    ring.tail = 0;
 
-    iowrite32(0x00000001, &regs->dma_ctrl); // リングバッファDMA有効化
-    pr_info("%s: 8-Page DMA Ring Buffer Engine deployed successfully.\n", MODULE_NAME);
+    /* 初期のバッファアドレスをセット */
+    iowrite32((u32)(ring.phys_handle[0] & 0xFFFFFFFF), &regs->dma_addr_l);
+    iowrite32((u32)((ring.phys_handle[0] >> 32) & 0xFFFFFFFF), &regs->dma_addr_h);
+
+    ret = request_irq(IRQ_LINE_TDM, c_rome_tdm_ring_irq_handler, IRQF_TRIGGER_RISING, MODULE_NAME, NULL);
+    if (ret) goto free_dma;
+
+    iowrite32(0x00000001, &regs->dma_ctrl);
+    pr_info("%s: 8-Page DMA Ring Buffer successfully deployed.\n", MODULE_NAME);
     return 0;
 
-alloc_err:
-    for (int j = 0; j < i; j++) {
-        if (dma_virt_pages[j]) dma_free_coherent(NULL, TDM_PAGE_SIZE, dma_virt_pages[j], dma_phys_handles[j]);
+free_dma:
+    for (i = 0; i < RING_BUFFER_PAGES; i++) {
+        if (ring.virt_addr[i]) {
+            dma_free_coherent(NULL, PAGE_SIZE_TDM, ring.virt_addr[i], ring.phys_handle[i]);
+        }
     }
     iounmap(mmio_base);
-    return -ENOMEM;
+    return ret;
 }
 
 static void __exit c_rome_ring_exit(void)
 {
+    int i;
     struct mhd_reg_map __iomem *regs = (struct mhd_reg_map __iomem *)mmio_base;
     if (mmio_base) iowrite32(0x00000000, &regs->dma_ctrl);
     free_irq(IRQ_LINE_TDM, NULL);
-    for (int i = 0; i < DMA_RING_PAGES; i++) {
-        if (dma_virt_pages[i]) dma_free_coherent(NULL, TDM_PAGE_SIZE, dma_virt_pages[i], dma_phys_handles[i]);
+    for (i = 0; i < RING_BUFFER_PAGES; i++) {
+        dma_free_coherent(NULL, PAGE_SIZE_TDM, ring.virt_addr[i], ring.phys_handle[i]);
     }
     if (mmio_base) iounmap(mmio_base);
 }
