@@ -1,0 +1,58 @@
+---
+- name: "Layer 3 Coherent Interface: Kernel Module Prototyping & Hot-Deployment"
+  hosts: quantum_servers
+  become: yes
+  vars:
+    artifact_src: "./dist/c_rome_mhd_core_x86_64.tar.gz"
+    deploy_dir: "/opt/c_rome/firmware"
+    module_name: "c_rome_mhd_core"
+    dev_node: "/dev/c_rome_layer3_alert"
+
+  tasks:
+    - name: Ensure targeted deployment directory structure exists
+      ansible.builtin.file:
+        path: "{{ deploy_dir }}"
+        state: directory
+        mode: '0755'
+
+    - name: Push and extract compiled runtime kernel module package to physical nodes
+      ansible.builtin.unarchive:
+        src: "{{ artifact_src }}"
+        dest: "{{ deploy_dir }}"
+        owner: root
+        group: root
+
+    - name: Inspect if the previous driver instance is active in ring buffer
+      ansible.builtin.shell: "lsmod | grep {{ module_name }}"
+      register: lsmod_check
+      failed_when: false
+      changed_when: false
+
+    - name: Unload deprecated kernel module gracefully to clear ring memory
+      community.general.modprobe:
+        name: "{{ module_name }}"
+        state: absent
+      when: lsmod_check.rc == 0
+      ignore_errors: yes
+
+    - name: Hot-deploy new C_ROME-OS Core Module via dynamic insmod execution
+      ansible.builtin.command: "insmod {{ deploy_dir }}/{{ module_name }}.ko"
+      register: insmod_result
+      changed_when: "insmod_result.rc == 0"
+
+    - name: Verify character device node persistence and initialize security permissions
+      ansible.builtin.file:
+        path: "{{ dev_node }}"
+        mode: '0660'
+        owner: root
+        group: "quantum_monitors"
+      ignore_errors: yes
+
+    - name: Audit ring buffer initialization states from dmesg pipelines
+      ansible.builtin.shell: "dmesg | grep -i {{ module_name }} | tail -n 3"
+      register: dmesg_audit
+      changed_when: false
+
+    - name: Output deployment confirmation log summary
+      ansible.builtin.debug:
+        msg: "Node Node Setup complete. Kernel message: {{ dmesg_audit.stdout }}"
