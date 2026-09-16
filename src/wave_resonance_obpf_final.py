@@ -13,12 +13,11 @@ def run_obpf_link_budget_simulation_v2(is_throttled=False, enable_obpf=True):
     raw_ase_noise = (total_loss_db * 5.0) * 0.05
 
     if enable_obpf:
-        total_loss_db += 0.5
-        # 10ps/40psのスペクトル幅に応じた高次分散歪み（TOD）の影響をシミュレート
-        # スロットリング（40ps）時はパルスが広いためTOD歪みを受けにくい（0.02）、10ps時は歪みが大きい（0.15）
-        tod_distortion_factor = 0.02 if is_throttled else 0.15
-        amplifier_noise_amplitude = (raw_ase_noise * 0.10) + tod_distortion_factor
-        title_str = "OBPF Active + TOD Correction Applied"
+        # パルス延伸時はスペクトルがOBPFの中心に綺麗に収まり、10ps通常時はエッジで歪む物理を反映
+        signal_distortion_db = 0.05 if is_throttled else 0.40
+        total_loss_db += (0.5 + signal_distortion_db)
+        amplifier_noise_amplitude = raw_ase_noise * 0.10
+        title_str = "OBPF Active + Dynamic Spectral Scaling Applied"
     else:
         amplifier_noise_amplitude = raw_ase_noise
         title_str = "Raw Link without OBPF"
@@ -37,6 +36,7 @@ def run_obpf_link_budget_simulation_v2(is_throttled=False, enable_obpf=True):
     Z_space = np.clip(Z_space + (np.abs(residual_noise) * 20.0), 0.0, 377.0)
 
     return Z_space, residual_noise, title_str
+
 
 
 
