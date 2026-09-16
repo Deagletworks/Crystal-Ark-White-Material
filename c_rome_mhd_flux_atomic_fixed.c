@@ -53,7 +53,7 @@ static irqreturn_t c_rome_tdm_throttling_handler(int irq, void *dev_id)
     /* 2. 残りページの安全な算出 */
     avail = (h_val >= t_val) ? (RING_BUFFER_PAGES - (h_val - t_val)) : (t_val - h_val);
 
-    /* 3. フィードバック制御 */
+    /* 3. フィードバック制御およびライトバリアの適用 */
     if (unlikely(avail <= 1)) {
         iowrite32(CLK_THROTTLE_25MHZ, &regs->throttling_ctrl);
     } else if (avail >= 4) {
@@ -63,6 +63,8 @@ static irqreturn_t c_rome_tdm_throttling_handler(int irq, void *dev_id)
     }
 
     smp_wmb();
+    mmiowb(); /* ハードウェアバス上でのI/O順序を強制 */
+
     dma_addr_t next_phys = ring.phys_handle[h_val];
     iowrite32((u32)(next_phys & 0xFFFFFFFF), &regs->dma_addr_l);
     iowrite32((u32)((next_phys >> 32) & 0xFFFFFFFF), &regs->dma_addr_h);
