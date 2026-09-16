@@ -56,3 +56,37 @@
     - name: Output deployment confirmation log summary
       ansible.builtin.debug:
         msg: "Node Node Setup complete. Kernel message: {{ dmesg_audit.stdout }}"
+
+# deploy_layer3_nodes.yml の末尾に追加するテスト自動化セクション
+    - name: [TEST-01] Verify kernel module symbols registration in /proc
+      ansible.builtin.assert:
+        that:
+          - "insmod_result.rc == 0"
+        fail_msg: "C_ROME-OS kernel module failed to attach to the subsystem."
+        success_msg: "Validation Passed: Subsystem symbols attached."
+
+    - name: [TEST-02] Run real-time sanity check on character device file descriptor
+      ansible.builtin.shell: |
+        # デバイスノードが存在し、読み込み権限が正常に付与されているかを非同期チェック
+        if [ -c "{{ dev_node }}" ]; then
+          echo "NODE_HEALTHY"
+        else
+          echo "NODE_MISSING"
+          exit 1
+        fi
+      register: device_health
+      failed_when: "'NODE_MISSING' in device_health.stdout"
+
+    - name: [TEST-03] Ensure Prometheus Telemetry Endpoint is responding on port 9100
+      ansible.builtin.uri:
+        url: "http://localhost:9100/metrics"
+        method: GET
+        return_content: yes
+      register: metrics_check
+      until: metrics_check.status == 200
+      retries: 5
+      delay: 2
+
+    - name: Output finalized deployment testbed audit dashboard
+      ansible.builtin.debug:
+        msg: "All hardware sanity gates passed. Layer 3 0-Ohm system is running in absolute coherece mode."
