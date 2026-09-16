@@ -90,6 +90,17 @@ static irqreturn_t c_rome_tdm_throttling_handler(int irq, void *dev_id)
     iowrite32((u32)(next_phys & 0xFFFFFFFF), &regs->dma_addr_l);
     iowrite32((u32)((next_phys >> 32) & 0xFFFFFFFF), &regs->dma_addr_h);
 
+// c_rome_mhd_flux_throttling.c 内の書き込み順序を完全固定
+iowrite32(clean_x, &regs->flux_x);
+iowrite32(clean_y, &regs->flux_y);
+mmiowb(); /* メモリマップドI/Oのライトバリアを呼び出し、レジスタ書き込みの順序を物理的に強制 */
+
+/* すべてのデータがバス上で確定した後に、同期トリガーを一撃で叩く */
+iowrite32(0x00000001, &regs->sync_trigger);
+
+
+
+
     iowrite32(0x00000001, &regs->int_status);
     return IRQ_HANDLED;
 }
