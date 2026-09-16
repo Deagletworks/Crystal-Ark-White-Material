@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 
 
-# wave_resonance_obpf_final.py の物理計算ブロックを修正
+# wave_resonance_obpf_final.py の物理計算ブロックを動的に修正
 def run_obpf_link_budget_simulation_v2(is_throttled=False, enable_obpf=True):
     num_qubits = 1000000
     grid_density = 300
@@ -15,7 +15,7 @@ def run_obpf_link_budget_simulation_v2(is_throttled=False, enable_obpf=True):
     if enable_obpf:
         total_loss_db += 0.5
         # 10ps/40psのスペクトル幅に応じた高次分散歪み（TOD）の影響をシミュレート
-        # スロットリング（40ps）時はパルスが広いため、OBPFの急峻な壁によるTOD歪みの影響を受けにくい（0.02）、10ps時は歪みが大きい（0.15）
+        # スロットリング（40ps）時はパルスが広いためTOD歪みを受けにくい（0.02）、10ps時は歪みが大きい（0.15）
         tod_distortion_factor = 0.02 if is_throttled else 0.15
         amplifier_noise_amplitude = (raw_ase_noise * 0.10) + tod_distortion_factor
         title_str = "OBPF Active + TOD Correction Applied"
@@ -37,6 +37,7 @@ def run_obpf_link_budget_simulation_v2(is_throttled=False, enable_obpf=True):
     Z_space = np.clip(Z_space + (np.abs(residual_noise) * 20.0), 0.0, 377.0)
 
     return Z_space, residual_noise, title_str
+
 
 
 
