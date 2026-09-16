@@ -9,13 +9,16 @@ const ALERT_DEVICE_PATH: &str = "/dev/c_rome_layer3_alert";
 const C_ROME_IOC_MAGIC: u8 = b'q';
 
 /// カーネル空間の struct c_rome_alert_packet と完全に一致するアライメント構造体
-#[repr(C)]
+// src/main.rs (アライメント修正版)
+#[repr(C, packed)] // メモリを隙間なく詰め、カーネル側のCアライメントに完全同調させる
 #[derive(Debug, Clone)]
 pub struct ChtmlAlertPacket {
     pub error_flag: u32,
+    pub _pad: u32, // 64bitアライメント用の4バイト明示的パディング
     pub event_timestamp_ns: u64,
     pub error_log: [u8; 128],
 }
+
 
 // nixマクロを用いてアトミック読み出し ioctl コマンドを生成
 nix::ioctl_read!(read_atomic_alert, C_ROME_IOC_MAGIC, 3, ChtmlAlertPacket);
