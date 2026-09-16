@@ -57,8 +57,7 @@ static inline u32 get_available_ring_pages(void)
 }
 
 /**
- * @brief スロットリング機構内蔵のTDMパルス同期 割り込みハンドラ
- */
+// c_rome_mhd_flux_throttling.c 内の割り込み処理を以下に修正
 static irqreturn_t c_rome_tdm_throttling_handler(int irq, void *dev_id)
 {
     struct mhd_reg_map __iomem *regs = (struct mhd_reg_map __iomem *)mmio_base;
@@ -66,30 +65,27 @@ static irqreturn_t c_rome_tdm_throttling_handler(int irq, void *dev_id)
 
     if (!(status & 0x00000001)) return IRQ_NONE;
 
-    /* 1. CPUによる現在のページのデータ回収・処理 */
+    /* CPU側の処理完了に伴うテールポインタ更新 */
     ring.tail = (ring.tail + 1) % RING_BUFFER_PAGES;
+    
+    smp_mb(); /* コンパイラ・CPUの最適化による並べ替えを完全に抑止 (メモリバリア) */
 
-    /* 2. ハードウェアの次のページ設定 */
+    /* ハードウェア側の次ページインクリメント */
     ring.head = (ring.head + 1) % RING_BUFFER_PAGES;
 
-    /* 3. 【動的フィードバック制御ループ】バッファ空き状況のリアルタイム監視 */
     u32 available_pages = get_available_ring_pages();
 
     if (unlikely(available_pages <= 1)) {
-        /* バッファ詰まり危険水域（残ページ数 1 以下）: ハードウェアへパルス周波数の抑制命令を発火 */
-        pr_warn_ratelimited("%s: Ring capacity low (%d pages left). Throttling TDM clock to 25MHz!\n", 
-                            "c_rome", available_pages);
+        /* スロットリング発火 */
         iowrite32(CLK_THROTTLE_25MHZ, &regs->throttling_ctrl);
     } else if (available_pages >= 4) {
-        /* バッファに十分な余裕（4ページ以上）が回復した場合: 通常のフルスピード駆動に自動復帰 */
         if (ioread32(&regs->throttling_ctrl) != CLK_NOMINAL_100MHZ) {
-            pr_info_ratelimited("%s: Buffer queue cleared (%d pages free). Restoring nominal 100MHz clock.\n", 
-                                "c_rome", available_pages);
             iowrite32(CLK_NOMINAL_100MHZ, &regs->throttling_ctrl);
         }
     }
 
-    /* 4. 次ページの物理アドレスをコミット */
+    smp_wmb(); /* ハードウェアへのレジスタ書き込み前に全てのメモリ操作を確定 */
+
     dma_addr_t next_phys = ring.phys_handle[ring.head];
     iowrite32((u32)(next_phys & 0xFFFFFFFF), &regs->dma_addr_l);
     iowrite32((u32)((next_phys >> 32) & 0xFFFFFFFF), &regs->dma_addr_h);
@@ -97,3 +93,4 @@ static irqreturn_t c_rome_tdm_throttling_handler(int irq, void *dev_id)
     iowrite32(0x00000001, &regs->int_status);
     return IRQ_HANDLED;
 }
+
