@@ -18,7 +18,7 @@ struct c_rome_alert_packet {
     u32 error_flag;
     u32 _pad;                  /* 64bitアライメント用明示的パディング */
     u64 event_timestamp_ns;
-    char error_log;
+    char error_log[128];
 } __attribute__((packed));     /* GCCのアライメントパディングを強制排除 */
 
 struct c_rome_class_ring {
@@ -72,6 +72,7 @@ static irqreturn_t c_rome_tdm_throttling_handler(int irq, void *dev_id)
     iowrite32(0x00000001, &regs->int_status);
     return IRQ_HANDLED;
 }
+
 
 
 
