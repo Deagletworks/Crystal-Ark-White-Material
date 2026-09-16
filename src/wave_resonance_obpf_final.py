@@ -6,9 +6,14 @@ def run_obpf_link_budget_simulation(enable_obpf=True):
     grid_density = 300
     
     # 1. リンクバジェット基本設計 (3km SMF + 510m DCF)
-    total_loss_db = (3.0 * 0.2) + (0.51 * 0.5)  # 0.855 dB
-    edfa_noise_figure = 5.0
-    raw_ase_noise_amplitude = (total_loss_db * edfa_noise_figure) * 0.05
+# wave_resonance_obpf_final.py 内のバジェット計算式を修正
+total_loss_db = (3.0 * 0.2) + (0.51 * 0.5)  # 0.855 dB (SMF+DCF)
+if enable_obpf:
+    total_loss_db += 0.5  # OBPFの挿入損失を正確に加算 (1.355 dB)
+    obpf_suppression_ratio = 0.10
+    # 損失増加によるノイズ床の上昇と、OBPFの帯域外カット効果を正しく乗算
+    amplifier_noise_amplitude = ((total_loss_db * 5.0) * 0.05) * obpf_suppression_ratio
+
 
     # 2. 【光狭帯域フィルタ（OBPF）によるノイズ抑制モデリング】
     if enable_obpf:
