@@ -1,0 +1,54 @@
+name: "Layer 3: Wave Resonance Auto-Build & Markdown Update"
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'wave_resonance_sim.py'
+      - '.github/workflows/layer3_auto_build.yml'
+  schedule:
+    # システムの微調整・キャリブレーション監視用に毎日0:00(UTC)に自動実行
+    - cron: '0 0 * * *'
+  workflow_dispatch: # 手動実行トリガー
+
+jobs:
+  build-and-update-readme:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # 生成したアセットをリポジトリへPushする権限
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python Environment
+      uses: actions/setup-python@v5
+      with:
+        python-node-version: '3.10'
+        cache: 'pip'
+
+    - name: Install Physics Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install numpy matplotlib
+
+    - name: Create Asset Directories
+      run: mkdir -p docs/assets
+
+    - name: Execute Wave Resonance Simulator (La:HfO2 Const.)
+      run: python wave_resonance_sim.py
+
+    - name: Commit and Push Updated Layer 3 Graphic Assets
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action [Bot]"
+        
+        # 変更された画像アセットがある場合のみステージングしてコミット
+        if [ -n "$(git status --porcelain docs/assets/)" ]; then
+          git add docs/assets/layer3_resonance_layout.png
+          git commit -m "chore(auto-build): update Layer 3 resonance simulation layout graphic [skip ci]"
+          git push origin main
+        else
+          echo "No structural changes in resonance layout. Skipping push."
+        fi
