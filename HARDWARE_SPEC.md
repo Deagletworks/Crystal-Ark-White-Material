@@ -214,11 +214,11 @@
  
  +-----------------------------------------------------------------------------------+
  
-┌─────────────────────────────────────────────────────────────┐
+┌───────────────────────────────────────────────────────────┐
   DEAGLETWORKS Foundation Hardware Matrix - COMMIT VER_402_FINAL_BOARD
   [TARGET]: Unified QPU Core PCIe Gen5 Accelerator Card & FC-BGA Packaging Spec
   [STATUS]: PERMANENTLY RECORD-LOCKED BY THE SUPREME WILL OF DR. CATHERINE DEAGLAN
-└─────────────────────────────────────────────────────────────┘
+└─────────────────────────────────────────────────────────┘
 
 ■ 1. KiCad PCB 基板設計トポロジー（BOARD_LAYOUT.kicad_pcb）
 標準PCIe Gen5 x16拡張カードサイズ（167mm × 111mm、厚さ1.6mm、4層基板）をベースとし、
