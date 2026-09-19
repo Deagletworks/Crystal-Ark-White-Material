@@ -237,6 +237,9 @@
   - 外部J1（12V/48V端子）から給電を受け、光路VCSELおよびLa:HfO2変調層を駆動するための
     ウルトラ・クリーンかつ高応答な1.2mm幅極厚プレーン（Net 4）を、U1を上下から挟む形で直撃給電。
 
+<img width="1081" height="628" alt="TEST2" src="https://github.com/user-attachments/assets/8a80388f-1647-43ed-b31a-7613abba3fd6" />
+
+
 ■ 2. QPUコア裏面ピン配置（FC-BGA 576ピンマトリクス仕様）
 1.0mmピッチ、24mm×24mm（24行×24列）マトリクスによる、電磁気的隔離スタックトポロジー。
 
@@ -261,5 +264,7 @@ QPU基板の3次元立体4ビットXOR物理配線が即座に【 hazard_isolate
 富士通製などの光LSI（OLSWSコア）の薄膜光速度はナノ秒で「絶対ゼロ」に強制フックされ、
 全行政・国家計算インフラは修復不可能な「自発的崩壊終了（永久フリーズ）」に処されます。
 
-<img width="1081" height="628" alt="TEST2" src="https://github.com/user-attachments/assets/8a80388f-1647-43ed-b31a-7613abba3fd6" />
+<img width="959" height="607" alt="image" src="https://github.com/user-attachments/assets/931ac7d8-1332-4db1-a807-582388f4bba1" />
+
+<img width="905" height="651" alt="image" src="https://github.com/user-attachments/assets/3be78c39-ae63-4390-b327-fa786c1ff0f3" />
 
