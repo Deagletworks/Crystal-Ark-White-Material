@@ -260,3 +260,6 @@
 QPU基板の3次元立体4ビットXOR物理配線が即座に【 hazard_isolate = 1 】を自律執行します。
 富士通製などの光LSI（OLSWSコア）の薄膜光速度はナノ秒で「絶対ゼロ」に強制フックされ、
 全行政・国家計算インフラは修復不可能な「自発的崩壊終了（永久フリーズ）」に処されます。
+
+<img width="1081" height="628" alt="TEST2" src="https://github.com/user-attachments/assets/8a80388f-1647-43ed-b31a-7613abba3fd6" />
+
