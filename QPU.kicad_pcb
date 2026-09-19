@@ -1,0 +1,463 @@
+(kicad_pcb
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(general
+		(thickness 1.6)
+		(legacy_teardrops no)
+	)
+	(paper "A4")
+	(layers
+		(0 "F.Cu" signal)
+		(4 "In1.Cu" signal)
+		(6 "In2.Cu" signal)
+		(2 "B.Cu" signal)
+		(5 "F.SilkS" user "F.Silkscreen")
+		(7 "B.SilkS" user "B.Silkscreen")
+		(1 "F.Mask" user)
+		(3 "B.Mask" user)
+		(25 "Edge.Cuts" user)
+		(27 "Margin" user)
+		(31 "F.CrtYd" user "F.Courtyard")
+		(29 "B.CrtYd" user "B.Courtyard")
+	)
+	(setup
+		(pad_to_mask_clearance 0)
+		(allow_soldermask_bridges_in_footprints no)
+		(tenting
+			(front yes)
+			(back yes)
+		)
+		(covering
+			(front no)
+			(back no)
+		)
+		(plugging
+			(front no)
+			(back no)
+		)
+		(capping no)
+		(filling no)
+		(pcbplotparams
+			(layerselection 0x00000000_00000000_55555555_5755f5ff)
+			(plot_on_all_layers_selection 0x00000000_00000000_00000000_00000000)
+			(disableapertmacros no)
+			(usegerberextensions no)
+			(usegerberattributes yes)
+			(usegerberadvancedattributes yes)
+			(creategerberjobfile yes)
+			(dashed_line_dash_ratio 12)
+			(dashed_line_gap_ratio 3)
+			(svgprecision 4)
+			(plotframeref no)
+			(mode 1)
+			(useauxorigin no)
+			(pdf_front_fp_property_popups yes)
+			(pdf_back_fp_property_popups yes)
+			(pdf_metadata yes)
+			(pdf_single_document no)
+			(dxfpolygonmode yes)
+			(dxfimperialunits yes)
+			(dxfusepcbnewfont yes)
+			(psnegative no)
+			(psa4output no)
+			(plot_black_and_white yes)
+			(sketchpadsonfab no)
+			(plotpadnumbers no)
+			(hidednponfab no)
+			(sketchdnponfab yes)
+			(crossoutdnponfab yes)
+			(subtractmaskfromsilk no)
+			(outputformat 1)
+			(mirror no)
+			(drillshape 1)
+			(scaleselection 1)
+			(outputdirectory "")
+		)
+	)
+	(footprint "TerminalBlock:Power_Input_12V_48V"
+		(layer "F.Cu")
+		(uuid "0794990e-a8df-42ab-b6c3-81e7d1865139")
+		(at 160 90)
+		(descr "Auxiliary Power Input for High-Transient VRM Driving")
+		(property "Reference" "J1"
+			(at 0 -5 0)
+			(layer "F.SilkS")
+			(uuid "62de871a-1d14-4398-8bb9-dcf0a33f7bd5")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(uuid "1d65405f-0c78-40dc-9f45-8ef4c7b540dd")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c778810f-6534-4143-b8d6-fc70ce2051ff")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8a448028-6a4f-46cf-8bce-03cd003c38b2")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(duplicate_pad_numbers_are_jumpers no)
+		(embedded_fonts no)
+	)
+	(footprint "Package_BGA:PCIe_QPU_Bridge_Bridge"
+		(layer "F.Cu")
+		(uuid "96159244-c687-4b14-aa67-e9f7a9d64070")
+		(at 30 55)
+		(descr "Host Arbitration Bridge Controller with PCIe Gen5 IP & DECOR Purge Stack")
+		(property "Reference" "U2"
+			(at 0 -15 0)
+			(layer "F.SilkS")
+			(uuid "36e71e12-4a93-4fdd-8995-b57f62491f78")
+			(effects
+				(font
+					(size 1.2 1.2)
+					(thickness 0.18)
+				)
+			)
+		)
+		(property "Value" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(uuid "1a1ff80b-a1f8-44eb-af0a-4df81b5a972b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0dbb1567-f257-4671-a8b0-00a5b1625dd5")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4e46b50d-b63f-40e1-86f1-e72623955f18")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(duplicate_pad_numbers_are_jumpers no)
+		(embedded_fonts no)
+	)
+	(footprint "Connector_PCIe:PCIe_x16_Edge_Connector"
+		(layer "F.Cu")
+		(uuid "babc5f9d-54e4-4bd1-95d3-362bb3b9c0cc")
+		(at 0 50)
+		(descr "PCIe Gen5 x16 Gold Finger Edge Connector")
+		(property "Reference" "P1"
+			(at 0 -5 0)
+			(layer "F.SilkS")
+			(uuid "9761d4b9-b8f4-4b10-a03f-3efc4d88f15e")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(uuid "6a1b291b-fca3-44f9-b234-410b7924c86d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0332651f-64d6-4571-9d80-ee236d6fa451")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d0527c01-f682-4a41-bb58-3c56f90dc2e4")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(duplicate_pad_numbers_are_jumpers no)
+		(embedded_fonts no)
+	)
+	(footprint "Package_BGA:DECOR_Purge_Stack_SRAM"
+		(layer "F.Cu")
+		(uuid "c251a3df-8e86-4bca-968c-fc60cc277377")
+		(at 30 25)
+		(descr "DECOR margin_data [11:0] 1ns Immediate Noise Vacuum Stack Buffer")
+		(property "Reference" "U3"
+			(at 0 -10 0)
+			(layer "F.SilkS")
+			(uuid "589a6dd1-d916-4c63-b57b-71597df6aea8")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(uuid "4514a6cc-a7fd-43a6-a9b2-57dfa35fad5f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b6432829-d7f4-4365-841b-ef8e27c3522d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "73726123-f2d5-4224-9697-92bef3d3b61f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(duplicate_pad_numbers_are_jumpers no)
+		(embedded_fonts no)
+	)
+	(footprint "Package_BGA:QPU_1Mbit_Ultimate_Unified_SoC"
+		(layer "F.Cu")
+		(uuid "fbd254d1-7138-401f-8aa4-834dc2d202a6")
+		(at 75 55)
+		(descr "Unified QPU Core 1Mbit Package (VENUS, Flower, ANGEL, Divine Integration)")
+		(property "Reference" "U1"
+			(at 0 -22 0)
+			(layer "F.SilkS")
+			(uuid "a7bce6f7-c564-49d4-8f57-d1c980b3fc14")
+			(effects
+				(font
+					(size 1.5 1.5)
+					(thickness 0.2)
+				)
+			)
+		)
+		(property "Value" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(uuid "068913b0-53fe-4913-b738-091ef555328c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9d86ea48-2e72-4c76-8daf-ca90c0af1756")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7cdddb8d-9ed5-4524-9d20-5a1738fbd398")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_circle
+			(center 0 0)
+			(end 5 0)
+			(stroke
+				(width 0.2)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "634eeae0-d018-4224-8839-76efce1d0611")
+		)
+		(embedded_fonts no)
+	)
+	(footprint "Power_Module:Digital_VRM_MultiPhase"
+		(layer "F.Cu")
+		(uuid "ffd3d917-8d2e-4ab3-bf69-c470914d1522")
+		(at 130 55)
+		(descr "Ultra-Clean High-Response VRM for Optical VCSEL and La:HfO2-NV Modulation")
+		(property "Reference" "VRM1"
+			(at 0 -20 0)
+			(layer "F.SilkS")
+			(uuid "030b5e24-f1cd-4830-a0ae-6f4ea19d4121")
+			(effects
+				(font
+					(size 1.2 1.2)
+					(thickness 0.18)
+				)
+			)
+		)
+		(property "Value" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(uuid "c8c13c8d-db4f-401a-9f3a-0696bdf95ea6")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c88863f1-c9f7-4035-bd50-5ae9e6cabda8")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "50bf902f-b2ca-4e33-9107-3391e71c895a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(duplicate_pad_numbers_are_jumpers no)
+		(embedded_fonts no)
+	)
+	(gr_rect
+		(start 0 0)
+		(end 167 111)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(fill no)
+		(layer "Edge.Cuts")
+		(uuid "7e611ebc-b3b2-49e7-9269-dec05f9a02d7")
+	)
+	(segment
+		(start 30 45)
+		(end 30 32)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "")
+		(uuid "76065ba0-3cc7-4213-bb10-d2c4fba07c51")
+	)
+	(segment
+		(start 115 55)
+		(end 90 55)
+		(width 1.2)
+		(layer "F.Cu")
+		(net "")
+		(uuid "7a18f833-1beb-49fc-9fb0-b1e8961ad49b")
+	)
+	(segment
+		(start 42 55)
+		(end 60 55)
+		(width 0.15)
+		(layer "F.Cu")
+		(net "")
+		(uuid "ebdc7d3f-37d9-49e0-b09c-f7d373eb881a")
+	)
+	(segment
+		(start 5 50)
+		(end 20 53)
+		(width 0.18)
+		(layer "F.Cu")
+		(net "")
+		(uuid "fa23e9ca-6e70-4bd9-82dc-a2fedfb40cc8")
+	)
+	(segment
+		(start 115 55)
+		(end 90 55)
+		(width 1.2)
+		(layer "B.Cu")
+		(net "")
+		(uuid "17b714f0-1f5f-4d24-a634-4863a0ebb1b1")
+	)
+	(segment
+		(start 5 51)
+		(end 20 54)
+		(width 0.18)
+		(layer "In1.Cu")
+		(net "")
+		(uuid "7f2c301d-fc37-4cd1-883b-6d6a847a3d8d")
+	)
+	(segment
+		(start 42 56)
+		(end 60 56)
+		(width 0.15)
+		(layer "In2.Cu")
+		(net "")
+		(uuid "8491a952-003e-47ca-97fd-997b17f8aea7")
+	)
+	(embedded_fonts no)
+)
