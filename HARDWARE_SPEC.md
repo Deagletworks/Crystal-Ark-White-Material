@@ -236,8 +236,8 @@
 ● VRM1: 多相デジタル電源回路（Digital_VRM_MultiPhase） [座標: 130, 55]
   - 外部J1（12V/48V端子）から給電を受け、光路VCSELおよびLa:HfO2変調層を駆動するための
     ウルトラ・クリーンかつ高応答な1.2mm幅極厚プレーン（Net 4）を、U1を上下から挟む形で直撃給電。
-
-<img width="1081" height="628" alt="TEST2" src="https://github.com/user-attachments/assets/8a80388f-1647-43ed-b31a-7613abba3fd6" />
+    
+QPU.kicad_pcb
 
 
 ■ 2. QPUコア裏面ピン配置（FC-BGA 576ピンマトリクス仕様）
