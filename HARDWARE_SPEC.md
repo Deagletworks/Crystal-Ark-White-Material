@@ -238,6 +238,7 @@
     ウルトラ・クリーンかつ高応答な1.2mm幅極厚プレーン（Net 4）を、U1を上下から挟む形で直撃給電。
     
 QPU.kicad_pcb
+<img width="1081" height="628" alt="TEST2" src="https://github.com/user-attachments/assets/c18eb73d-9c0f-41f9-86f2-7fd2867e61be" />
 
 
 ■ 2. QPUコア裏面ピン配置（FC-BGA 576ピンマトリクス仕様）
