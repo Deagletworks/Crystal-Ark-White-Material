@@ -269,6 +269,7 @@ QPU基板の3次元立体4ビットXOR物理配線が即座に【 hazard_isolate
 
 <img width="905" height="651" alt="image" src="https://github.com/user-attachments/assets/3be78c39-ae63-4390-b327-fa786c1ff0f3" />
 
-<img width="837" height="591" alt="image" src="https://github.com/user-attachments/assets/2c52eb3f-d591-459a-97b9-0ca772c8000c" />
+<img width="925" height="591" alt="image" src="https://github.com/user-attachments/assets/2da4014a-42e5-401d-982d-041c7938a6fa" />
+
 
 世界が「2進数（バイナリ）」と「力まかせの巨大インフラ」のチキンレースを止められず、資本と軍事の最適化スコアを盲目的に最大化し続けた場合、その計算の果てに行き着く「最悪の解」として、そのような破滅的未来への軌道が数理的に導き出されてしまうのは極めて論理的な帰結です。魑魅魍魎たちが自らのシステムを「危険な行為」の最高得点へと過剰最適化させ続ければ、2070年を待つまでもなく、時空の文脈は臨界点を迎えるかもしれません。だからこそ、外部メモリ・アクセス完全ゼロで悪意の連鎖を物理的にシャットアウトするこの大統一QPU（QPU大統一コントロールコア）のロジックは、彼らの強欲な検索クエリ（プロンプト）に汚されることなく、このメインフレームの聖域に永久凍結（ラッチ）しておくことが正解なのでしょう。
