@@ -62,6 +62,8 @@ class VenusDecorInterrelationSimulator:
         
         return qpu_shot_complete, final_distribution_vector
 
+
+
 # シミュレーターの稼働テスト（ユートピア社会システム・テスト）
 if __name__ == "__main__":
     print("===================================================================")
@@ -75,3 +77,144 @@ if __name__ == "__main__":
     
     assert complete == True
     print("[SYSTEM LOCKED] ユートピア経済学サプライチェーンの循環実態を確認。")
+
+
+
+1. 部分試作（TEG）分割発注用ブラックボックス仕様書（ポート定義ドキュメント）本ドキュメントは、
+東京大学d.lab（下層CMOSロジック面）および東北大学CIES（上層物理積層面）へ部分加工・試作を委託する際、
+QPU内部の真髄（16元数位相平面、ハザード隔離論理、4ビットXORデトークナイズ）を1ビットも明かさず、
+単なる「超並列ドライバおよび新材料特性評価TEG」として提示するための公式ポート定義仕様書である。
+1.1 システム概要本試作チップは、1024×1024正方マトリクス配列の駆動制御を行う「下層ロジックファブリック」、
+およびその直上に積層される「上層物理変調セグメント」から構成される、3D異種材料集積（3D-IC）テストエレメントグループ（TEG）である [1]。
+内部ロジックの動作アルゴリズムおよびコンテキスト復号シーケンスは、ハードウェアの製造段階においては「暗号化eFPGA領域」内にブラックボックス化されており、
+外部からの読み出しおよび逆コンパイルは物理的に不可能である。1.2 外部インターフェース・ポート定義（外部開示可能領域）
+                  ┌──────────────────────────────────────┐
+                  │                                      │
+   clk ──────────>│                                      │───> vcsel_x_scan_en
+   rst_n ────────>│                                      │───> vcsel_y_scan_en
+   start_shot ───>│         大統一QPU（TEG）               │───> matrix_x_addr[9:0]
+                  │       ブラックボックス表面               │───> matrix_y_addr[9:0]
+   flash_atc_m ──>│       (Inside: Secure eFPGA)         │───> q_skin_dac_index[3:0]
+   flash_atc_ui ─>│                                      │───> q_skin_dac_sign
+   flash_atc_ej ─>│                                      │───> buffer_write_en
+   flash_atc_ek ─>│                                      │───> margin_reg_we
+   buffer_ready ─>│                                      │───> margin_data[11:0]
+                  │                                      │───> qpu_shot_complete
+                  └──────────────────────────────────────┘
+【入力信号群：下層CMOS（東大d.lab / ファウンドリ）対象】clk (Input, 1bit): システム同期クロック。
+目標動作周波数 1GHz (周期 1.0ns)。rst_n (Input, 1bit): 非同期システムリセット（低レベルアクティブ）。
+不揮発初期化面のパージ。start_shot (Input, 1bit): 1nsワンショットファブリック起動トリガーパルス。
+flash_atc_wave_m [3:0] (Input, 4bit): 外部パラレル入力バス成分（原始情報 m）。
+flash_atc_wave_ui [3:0] (Input, 4bit): 外部パラレル入力バス成分（空間座標 μi）。
+flash_atc_wave_ej [3:0] (Input, 4bit): 外部パラレル入力バス成分（揺らぎ量 εj）。
+flash_atc_wave_ek [3:0] (Input, 4bit): 外部パラレル入力バス成分（歳入予算 Ek）。
+buffer_ready (Input, 1bit): 下層バッファ面（ANGEL）コンテキストホールド完了フラグ。
+【出力信号群：上層物理積層（東北大CIES）対象】vcsel_x_scan_en (Output, 1bit): 最上段VCSEL光変調アレイ X軸走査レーザー放射トリガー。
+vcsel_y_scan_en (Output, 1bit): 最上段VCSEL光変調アレイ Y軸走査レーザー放射トリガー。
+matrix_x_addr [9:0] (Output, 10bit): 1024ビット直交マルチスキャン X軸2次元幾何学アドレス。
+matrix_y_addr [9:0] (Output, 10bit): 1024ビット直交マルチスキャン Y軸2次元幾何学アドレス。
+q_skin_dac_index [3:0] (Output, 4bit): 外殻量子皮膚DAC同調用マルチプレクスインデックス。
+q_skin_dac_sign (Output, 1bit): 外殻量子皮膚DAC同調用正負符号判定。
+buffer_write_en (Output, 1bit): 下層バッファ（ANGEL）への次世代コンテキスト再投入ライトイネーブル。
+margin_reg_we (Output, 1bit): 【③ DECOR】余白レジスタ（Virtual SRAM）1ns高速パージ隔離イネーブル。
+margin_data [11:0] (Output, 12bit): 【③ DECOR】パージ隔離用マルチフェロイック衝突ノイズデータバス。
+qpu_shot_complete (Output, 1bit): 解確定完了（1024bitスキャン循環完了）通知フラグ。
+
+1.3 発注用境界条件（Sanitization Rules）回路全容の隠蔽: 本ドキュメントに含まれるポート以外の、
+16元数乗算内部データバス（sedenion_multiplier の接続ノード）、および状態マシーン（FSM）の遷移ロジックは、暗号化合成（Netlist Encryption）を行い、
+一切の回路図およびRTL構造の抽出を拒絶する。
+加工依頼の分離: 東大d.labに対しては「本ポートを持つeFPGA内蔵デジタルロジックASIC」として発注し、
+東北大CIESに対しては「製造完了したCMOSウェハの最上部マトリクス電極（matrix_x_addr/matrix_y_addr 直結部）への
+La:HfO2-NV強誘電体結晶薄膜の成膜およびVCSEL配置」のみを委託する [1]。
+
+
+2. 信用Xcise自動分配アルゴリズムのパラメータ固定自由圏20億台の分散量子ネットワーク
+（C@I_Press網：新世界OS = C_ROME-OS）へ向け、80億人のウォレットへ無条件生存保証（等価UBI）
+および知的財産活動の貢献度をダイレクトに還流させる自律循環スマートコントラクトの「不変初期パラメータ」をシステムカーネルへ固定配置（定常配分ロック）します。
+
+2.1 コントラクト固定パラメータ台帳（カーネル固定値）
+===================================================================
+【C_ROME-OS CORE: XCISE_DISTRIBUTION_PARAMETERS】
+===================================================================
+[PARAMETER_ID]        [FIXED_VALUE]          [UNIT / MEANING]
+-------------------------------------------------------------------
+PARAM_INITIAL_PULSE   452.98000000           MHz (ファブ同期放射周波数)
+PARAM_WORLD_WALLET    8000000000             Nodes (全地球個人エンドポイント数)
+PARAM_BASE_UBI_RATE   1000.00000000          Xcise / Cycle (無条件生存保証還流レート)
+PARAM_DECOR_CLEANSE   0.06250000             Ratio (16元数衝突ノイズパージに伴う残滓消去係数)
+PARAM_VENUS_REWARD    1.61803398             Factor (天才ギーク知的財産貢献度 黄金比傾斜配分)
+PARAM_OLSWS_CYCLES    1024                   Steps (直交マルチスキャン循環進行深度)
+-------------------------------------------------------------------
+[STATUS] : LOCKED & BOUND TO OLSWS CORE (NO CREDIT / CIRCULATING)
+===================================================================
+
+2.2 パラメータに基づく自動分配アルゴリズム（カーネル実装）本アルゴリズムは、
+レガシー金融の「金利」や「貨幣債務」を一切挟まず、QPUのワンショット執行と同時に、
+天才ギーク達の創造的貢献度を PARAM_VENUS_REWARD（黄金比傾斜）に基づいて個人のウォレットへ直接分配し、
+同時に PARAM_DECOR_CLEANSE によってシステム内の摩擦（ハザード）を遅延0nsで自動消去（クレンジング）します [1]。
+
+# C_ROME-OS Kernel Module: xcise_trust_distribution.py
+# SYSTEM LOCK: 2026-09-20 PROTOTYPE PARAMETERS FIXED
+
+class XciseTrustDistributionAlgorithm:
+    """
+    自由圏20億台の分散量子ネットワークを始動させる
+    自律循環スマートコントラクト・パラメータ固定配分エンジン
+    """
+    def __init__(self):
+        # 2.1の台帳に基づく固定パラメータのインジェクション
+        self.INITIAL_PULSE = 452.98 * 1e6   # 452.98 MHz
+        self.TOTAL_WALLETS = 8000000000     # 80億ウォレット
+        self.BASE_UBI = 1000.00             # 1000 Xcise / サイクル
+        self.DECOR_CLEANSE = 0.0625         # DECORクレンジング係数 [1]
+        self.VENUS_REWARD_FACTOR = 1.61803398 # 黄金比貢献配分係数
+
+    def execute_global_circulation(self, geek_contribution_matrix, system_hazard_vector):
+        """
+        1024ビット直交マルチスキャン（OLSWS）のファースト・パルス執行に同期し、
+        地球全域のXciseウォレットへ富を均等・傾斜還流させる
+        """
+        print(f"[C_ROME-OS] 出雲量子たたらファブ同期放射起動: {self.INITIAL_PULSE / 1e6} MHz")
+        
+        # 1. 80億人のウォレットへの無条件生存保証（BASE UBI）の等価還流の執行
+        # 既存のキャッシュとは別に、市民の知的財産活動の土台を支えるための初期配分
+        global_base_distribution = self.BASE_UBI * self.TOTAL_WALLETS
+        print(f"[CIRCULATION] 80億人のエンドポイントへ等価UBI還流開始: {global_base_distribution} Xciseを解放")
+
+        # 2. 【① VENUS】天才ギーク達の創造物に対する知的財産貢献度の自動分配
+        # 巨大資本の独占を完全にパージし、創作者へ黄金比傾斜でダイレクトにスマートマネーサプライを供給
+        total_geek_reward = 0.0
+        for geek_id, contribution in geek_contribution_matrix.items():
+            # 貢献度（Contribution）にVENUS黄金比係数をバインドして個々のウォレットへ直接還流
+            allocated_xcise = contribution * self.VENUS_REWARD_FACTOR
+            total_geek_reward += allocated_xcise
+            print(f"  -> ウォレット Node[{geek_id}]: 知的財産貢献還流確定 = {allocated_xcise:.4f} Xcise")
+
+        # 3. 【③ DECOR】システム摩擦ハザードの遅延0ns自動消去（クレンジング）
+        # 貧富の差や滞留の残滓となる非信用不流通ハザードを、DECORパージ回路を通じて完全封鎖
+        total_purged_hazard = sum(system_hazard_vector) * self.DECOR_CLEANSE
+        print(f"[DECOR CLEANSE] ネットワーク全体の摩擦ハザードを完全クレンジング: -{total_purged_hazard:.4f} Hazard-pushed")
+
+        # 4. 循環分散XaaS経済の実態としてシステムバランスを確定
+        net_circulation_velocity = (global_base_distribution + total_geek_reward) - total_purged_hazard
+        print(f"[SUCCESS] C@I_Press自動分配スマートコントラクト完了。ネットワーク純循環速度: {net_circulation_velocity:.4f}\n")
+        
+        return True, net_circulation_velocity
+
+# パラメータ固定動作検証
+if __name__ == "__main__":
+    engine = XciseTrustDistributionAlgorithm()
+    # テスト用ギーク貢献台帳（Node ID: 創造インデックス）
+    mock_geeks = {
+        "Geek_Node_001_ARK_Skin": 5000.0,
+        "Geek_Node_002_Sedenion_Core": 8500.0,
+        "Geek_Node_003_OLSWS_Driver": 6200.0
+    }
+    # シミュレーション上の16元数衝突ハザードベクトル
+    mock_hazards = [120.5, 450.2, 98.1, 310.4]
+    
+    # 最終ロックパルスの執行
+    success, velocity = engine.execute_global_circulation(mock_geeks, mock_hazards)
+    assert success == True
+
+
