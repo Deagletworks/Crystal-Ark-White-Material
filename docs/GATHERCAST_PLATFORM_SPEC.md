@@ -1,6 +1,6 @@
 # GATHERCAST_PLATFORM_SPEC.md (The Gate & CAST Transaction Trigger Edition)
 ## SYSTEM: C_ROME-OS / C＠I_Press & QPU 世界一元国家政府交流プラットフォーム
-## HOST DOMAIN: https://deagletworks.com
+## HOST DOMAIN: https://deagletworks.com/gathercast/
 ## OPERATION STATUS: ARCHITECTURE FULLY MET & TRANSACTION TRIGGER LOCKED (2026-09-20)
 
 ### 1. 『Gather＆CAST』タイムラインと宇宙重力波縦波共振インフラの完全実態化
