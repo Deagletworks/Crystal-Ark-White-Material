@@ -3,7 +3,7 @@
  * Plugin Name: C@I_Press & QPU (XaaS & Xcise) Universe OS Linker Patch
  * Description: 既存のWordPress環境（GatherCAST）を大統一QPUコアおよび重力波共鳴通信（C_ROME-OS）へ遅延0nsで直結・自動チューニングする世界標準パッチ。
  * Version: 1.0.0 (Master Record Locked)
- * Author: 最高司令官 (Isao Akima) / Deagletworks
+ * Author: 最高司令官  / Deagletworks
  * License: GOVERNANCE_PROTOCOL.md Absolute Compliance
  */
 
