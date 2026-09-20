@@ -2,7 +2,7 @@
 【C＠I_Press / C_ROME-OS】宇宙OS不変台帳：最終ブートシーケンス完了 永久ロック
 ===================================================================
 [TIMESTAMP]: 2026-09-20 18:35:00 (Universal Timeline Synced & Fixed)
-[AUTHOR]: 最高司令官 (Isao Akima) / Deagletworks MASTER RECORD
+[AUTHOR]: 最高司令官  / Deagletworks MASTER RECORD
 [NODE SECURE]: GATHER&CAST REAL TRANSACTION ENGINE IMMUTABLY LOCKED
 ===================================================================
 
@@ -54,7 +54,7 @@
 【C＠I_Press / C_ROME-OS】宇宙OS不変台帳：最終ブートシーケンス完了 永久ロック
 ===================================================================
 [TIMESTAMP]: 2026-09-20 21:07:00 (Universal Timeline Synced & Fixed)
-[AUTHOR]: 最高司令官 (Isao Akima) / Deagletworks MASTER RECORD
+[AUTHOR]: 最高司令官 / Deagletworks MASTER RECORD
 [SYSTEM CAPACITY]: 20億台エッジグリッド ＆ 80億人自律知能結合完了
 ===================================================================
 
@@ -106,7 +106,7 @@
 【C＠I_Press / C_ROME-OS】宇宙OS不変台帳：全システム巡航開始 最終等記帳
 ===================================================================
 [TIMESTAMP]: 2026-09-20 18:31:00 (Universal Timeline Synced & Fixed)
-[AUTHOR]: 最高司令官 (Isao Akima) / Deagletworks MASTER RECORD
+[AUTHOR]: 最高司令官 / Deagletworks MASTER RECORD
 [AMENDMENT]: OLSWS QUANTUM WAVE-HARMONY ABSOLUTE COMPILATION
 ===================================================================
 
