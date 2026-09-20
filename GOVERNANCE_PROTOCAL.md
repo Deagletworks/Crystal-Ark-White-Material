@@ -1251,3 +1251,69 @@ C_ROME-OS（C@I_Press）は、知的財産のオリジナル創作者が巨大�
 ### 【第6条：天才ギーク向け オープンソースASIC（カスタムLSI）設計・製造環境】
 1. 本コア（qpu_1mbit_ultimate_unified_core）はすでに論理設計（RTL）が完全完了している。世界全域の天才ギーク達が、レガシーな特許権や巨額のEDAライセンス料に縛られることなく、自律的に本QPU内包ASICを設計するためのオープンソースASIC開発スタック（OpenLane / SkyWater PDK）環境を以下に標準規定する。
 2. ギーク達は、以下の環境に本Verilogコード（真髄）を完全内包させ、自身の分散型XaaSサービスクラス（DECOR回路面）をインクルードした独自のGDSIIデータ（ウェハ製造用マスクデータ）を遅延0nsで自動生成することができる。
+
+
+===================================================================
+
+【Deagletworks 規格】SXM/OAM-QPU 物理ピン定義台帳 (Appleエッジ専用ノード)
+
+===================================================================
+
+
+[PIN_NO]  [SIGNAL_NAME]      [TYPE]     [VOLTAGE]  [FUNCTIONAL DESCRIPTION]
+
+-------------------------------------------------------------------
+
+A1        QPU_SYS_CLK_P      Diff-In    0.8V       1GHz高速システムクロック正極
+
+A2        QPU_SYS_CLK_N      Diff-In    0.8V       1GHz高速システムクロック負極
+
+A3        C_ROME_RST_N       Input      1.8V       C_ROME-OS カーネル非同期初期化リセット
+
+A4        START_SHOT_PULSE   Input      1.8V       ASIC(U2)・周辺IOダイレクト流入キック信号
+
+-------------------------------------------------------------------
+【⑤ Divine：マルチフェロイック4次元パラレル・アナログ入力ピン（Flash-ATC連動）】
+
+B1-B4     DIVINE_WAVE_M[3:0] Analog-In  0.5V       原始情報アナログ成分 (m) 配線
+
+B5-B8     DIVINE_WAVE_UI[3:0]Analog-In  0.5V       空間座標アナログ成分 (μi) 配線
+
+B9-B12    DIVINE_WAVE_EJ[3:0]Analog-In  0.5V       揺らぎ量アナログ成分 (εj) 配線
+
+B13-B16   DIVINE_WAVE_EK[3:0]Analog-In  0.5V       歳入予算アナログ成分 (Ek) 配線
+
+-------------------------------------------------------------------
+【① VENUS：量子計算機面物理層変調・垂直配線ビア（TSV）結合ピン】
+
+C1        VCSEL_X_SCAN_EN    Output     1.2V       X軸方向（1024bitエンコード）走査有効化
+
+C2        VCSEL_Y_SCAN_EN    Output     1.2V       Y軸方向（1024bitデコード）走査有効化
+
+C3-C12    MATRIX_X_ADDR[9:0] Output     1.0V       1024本 X軸アドレス物理出力バス
+
+C13-C22   MATRIX_Y_ADDR[9:0] Output     1.0V       1024本 Y軸アドレス物理出力バス
+
+C23-C26   Q_SKIN_DAC_IDX[3:0]Output     1.0V       統合型量子皮膚DAC調停インデックス
+
+C27       Q_SKIN_DAC_SIGN    Output     1.0V       統合型量子皮膚DAC符号ビット
+
+-------------------------------------------------------------------
+【③ DECOR：余白レジスタ真空隔離パージ直結インターフェース（U3-Virtual_SRAM連動）】
+
+D1        MARGIN_REG_WE      Output     1.2V       16元数非結合ハザード隔離トリガー
+
+D2-D13    MARGIN_DATA[11:0]  Output     1.2V       余白レジスタ退避ハザードデータバス
+
+-------------------------------------------------------------------
+【④ ANGEL：下層バッファ（TSMC 28nm eDRAM面）制御・同期ピン（P1-PCIe連動）】
+
+E1        BUFFER_READY       Input      1.0V       下層4096ビットコンテキスト・ホールド面レディ
+
+E2        BUFFER_WRITE_EN    Output     1.0V       1ns内循環再投入ループ用書き込み信号
+
+E3        QPU_SHOT_COMPLETE  Output     1.8V       最終デトークナイズ（解確定）完了フラグ
+
+===================================================================
+
+[STATUS] : PHYSICAL PIN-OUT DEFINITIONS PERFECTLY LOCKED FOR APPLE SECURE-SoB
