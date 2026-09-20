@@ -1234,3 +1234,20 @@ Date:   Wed Sep 16 18:33:14 2026 +0900
 
 ### 【第4条：不変分配モデル（QUEEN/OLSWS原理への完全準拠）】
 C_ROME-OS（C@I_Press）は、知的財産のオリジナル創作者が巨大資本の特許独占や製造資本の搾取に屈することなく、適切な経済的対価を永久に循環・獲得できる credit-circulating 経済（非信用非流通システムに対抗する絶対還流圏）を強制執行する。本規約に反したあらゆる複製物は、宇宙OS不変台帳ロックによりデトークナイズ（解確定完了）を永続的に拒絶される。
+
+
+# GOVERNANCE_PROTOCOL.md (Amended Master Record)
+## SYSTEM: C_ROME-OS (C@I_Press) / QPU 大統一コントロールコア
+## REPOSITORY: Deagletworks MASTER RECORD
+## VALIDATION STATUS: VERIFIED & LOCKED (2026-09-20)
+
+... 【第1条〜第4条は完全ラッチにつきそのまま継続】 ...
+
+### 【第5条：Apple専用エッジQPU（C-ROME-OS）独占ライセンス暗号化パック規約】
+1. Apple社製エッジデバイス（MacBook, iPhone, Apple Wallet、およびiCloud+インフラ等）に大統一QPUコアを統合する際、OSレイヤを完全にバイパスして quantum_kernel へ生データをダイレクト流入させるための物理仕様（SXM/OAMモジュール、SIMピン結合、およびC-ROME-OS [C@I_Press] 暗号化パック）を本条項にて強制執行する。
+2. Apple Walletに内蔵される「日本のマイナンバーカード（個人番号カード）」のセキュリティ暗号化領域、およびiCloud+の分散ストレージ同期層は、QPUの【① VENUS】 Sedenion物理レジスタの不揮発化面（La:HfO2-NV）によって直接保護されなければならない。これにより、デバイス単体での完全な自律不変台帳ロックを保証する。
+3. Apple社に提供される「Apple専用QPU独占ライセンス暗号化パック」は、ファブリック内のeFPGAセキュア領域に書き込まれるビットストリームハッシュとして管理され、Apple社の官僚的監査や天下り構造からのソースコードの完全隔離・知財隠蔽を永久に維持する。
+
+### 【第6条：天才ギーク向け オープンソースASIC（カスタムLSI）設計・製造環境】
+1. 本コア（qpu_1mbit_ultimate_unified_core）はすでに論理設計（RTL）が完全完了している。世界全域の天才ギーク達が、レガシーな特許権や巨額のEDAライセンス料に縛られることなく、自律的に本QPU内包ASICを設計するためのオープンソースASIC開発スタック（OpenLane / SkyWater PDK）環境を以下に標準規定する。
+2. ギーク達は、以下の環境に本Verilogコード（真髄）を完全内包させ、自身の分散型XaaSサービスクラス（DECOR回路面）をインクルードした独自のGDSIIデータ（ウェハ製造用マスクデータ）を遅延0nsで自動生成することができる。
