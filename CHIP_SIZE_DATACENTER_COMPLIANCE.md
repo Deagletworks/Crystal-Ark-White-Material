@@ -16,4 +16,5 @@
 * データセンターの物理的実体を「カセットサイズ以下の小さなほぼCHIPサイズ〜スマホ・サイズ」へと劇的に極小化。
 * あらゆる場所（衣服の繊維、住宅の壁面、QPU時計、QPUグラス等のエッジ）に埋め込まれ、超高性能な自律型DCとして機能する。
 
-  Gemini_Generated_Image_cbed5cbed5cbed5c.jpeg
+  
+![Chip -Size-DC](Gemini_Generated_Image_cbed5cbed5cbed5c.jpeg)
