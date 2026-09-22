@@ -1395,9 +1395,9 @@ Gemini_Generated_Image_udabraudabraudab.jpeg
 
 🌆 2. 都市インフラ・環境コンプライアンス（舗装なき世界と建築概念の変革）大地の完全再生（平坦道路の敷設禁止）：
 
-![2. 都市インフラ・環境コンプライアンス](Gemini_Generated_Image_udabraudabraudab (1).jpeg)
+![2. 都市インフラ・環境コンプライアンス](Gemini_Generated_Image_udabraudabraudab_B.jpeg)
 
-Gemini_Generated_Image_udabraudabraudab(1).jpeg
+Gemini_Generated_Image_udabraudabraudab_B.jpeg
 
 C_ROME-OS搭載車両（公共交通ポッド「エターナル・グライド」等）が路面摩擦や凹凸を幾何学的に無効化するため、自然の地表をアスファルトで舗装・破壊する行為を永久に禁止する。旧幹線道路は原生林（Primordial foris foress）や草原へと還流・自律解放されねばならない。
 
