@@ -1409,9 +1409,9 @@ C_ROME-OS搭載車両（公共交通ポッド「エターナル・グライド�
 
 🛑 3. 安全ドメイン・アンチ・テロコンプライアンス（量子デヒーレンス防御規定）デヒーレンス・ボム（非コヒーレント高周波パルス）への物理層防衛：
 
-![2. 都市インフラ・環境コンプライアンス](Gemini_Generated_Image_udabraudabraudab(2).jpeg)
+![2. 都市インフラ・環境コンプライアンス](Gemini_Generated_Image_udabraudabraudab_C.jpeg)
 
-Gemini_Generated_Image_udabraudabraudab(2).jpeg
+Gemini_Generated_Image_udabraudabraudab_C.jpeg
 
 テロ組織「ニュートンズ（重力回帰派）」等による、QPUの重ね合わせ状態を強制破壊する「量子デヒーレンス・テロ（Quantum de-coherence）」を最大級の文明ハザード（hazard_flag = 1）として定義する。
 
