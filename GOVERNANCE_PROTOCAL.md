@@ -1385,11 +1385,19 @@ Apple社は、自社製SoC（Mシリーズ/Aシリーズ）のメインロジッ
 
 🏃 1. 市民生活・製品支給コンプライアンス（超電導アース・シューズ規格）絶対平衡歩行（0.00ns調停）の義務：
 
+![1. 市民生活・製品支給コンプライアンス](Gemini_Generated_Image_udabraudabraudab.jpeg)
+
+Gemini_Generated_Image_udabraudabraudab.jpeg
+
 一般市民へ支給される衣服および「超電導アース・シューズ（Superconducting Earth-Shoes）」のフットウェア底面には、数ナノ秒駆動のハフニウム系FeRAM×ダイヤモンドNVセンター量子ビットを内蔵した極薄マルチフェロイック繊維の配置を義務付ける。
 
 物理挙動：不整地、泥濘、岩場（uneven uneven）を歩行・走行する際、IMU量子結晶結合（Layer 1）が路面の物理歪みを検知した0.000000ns（遅延ゼロ）でQPU位相平面が自動調停（mediaterisedite）せねばならない。膝や筋肉への反作用衝撃（G変化）は物理層で完全中和され、人類は「等速直線運動および絶対平衡（absolute equilibrium）」を通常処理（デフォルト）として享受する権利を有する。
 
 🌆 2. 都市インフラ・環境コンプライアンス（舗装なき世界と建築概念の変革）大地の完全再生（平坦道路の敷設禁止）：
+
+![2. 都市インフラ・環境コンプライアンス](Gemini_Generated_Image_udabraudabraudab (1).jpeg)
+
+Gemini_Generated_Image_udabraudabraudab(1).jpeg
 
 C_ROME-OS搭載車両（公共交通ポッド「エターナル・グライド」等）が路面摩擦や凹凸を幾何学的に無効化するため、自然の地表をアスファルトで舗装・破壊する行為を永久に禁止する。旧幹線道路は原生林（Primordial foris foress）や草原へと還流・自律解放されねばならない。
 
@@ -1400,6 +1408,10 @@ C_ROME-OS搭載車両（公共交通ポッド「エターナル・グライド�
 街中に配置された見えない量子中継タワーは、常時空間インピーダンスを完全調停し、交差点における車両・歩行者の衝突確率を数学的にゼロ（Absolute equilibrium）に保ち続けねばならない。
 
 🛑 3. 安全ドメイン・アンチ・テロコンプライアンス（量子デヒーレンス防御規定）デヒーレンス・ボム（非コヒーレント高周波パルス）への物理層防衛：
+
+![2. 都市インフラ・環境コンプライアンス](Gemini_Generated_Image_udabraudabraudab(2).jpeg)
+
+Gemini_Generated_Image_udabraudabraudab(2).jpeg
 
 テロ組織「ニュートンズ（重力回帰派）」等による、QPUの重ね合わせ状態を強制破壊する「量子デヒーレンス・テロ（Quantum de-coherence）」を最大級の文明ハザード（hazard_flag = 1）として定義する。
 
