@@ -15,7 +15,7 @@ GAFAMやAnthropic等のレガシー計算インフラが引き起こす「電力
 ![QPU-ARK](1.jpg)
 ![QPU-EXA](2.jpg)
 ![QPU-EXTREME](3.jpg)
-![QPU-DATAFlow](Gemini_Generated_Image_y90cney90cney90c.jpeg)
+![QPU-DATAFlow](4.jpg)　
 
 ## 📊 1. データセンター電力問題に対する革新技術の対比表（改訂版） [REF: BOARD_LAYOUT_VER_402]
 
