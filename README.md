@@ -12,9 +12,9 @@ GAFAMやAnthropic等のレガシー計算インフラが引き起こす「電力
 物理層から強制的にタスクキル（完全停止）するための、人類半導体進化の終着点（Crystal-Ark）である。
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-![QPU-ARK](Gemini_Generated_Image_azbsqfazbsqfazbs.jpeg)
-![QPU-EXA](Gemini_Generated_Image_j0pu34j0pu34j0pu.jpeg)
-![QPU-EXTREME](Gemini_Generated_Image_r46bl5r46bl5r46b.jpeg)
+![QPU-ARK](1.jpg)
+![QPU-EXA](2.jpg)
+![QPU-EXTREME](3.jpg)
 ![QPU-DATAFlow](Gemini_Generated_Image_y90cney90cney90c.jpeg)
 
 ## 📊 1. データセンター電力問題に対する革新技術の対比表（改訂版） [REF: BOARD_LAYOUT_VER_402]
