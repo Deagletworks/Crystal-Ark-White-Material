@@ -5,13 +5,13 @@
 * **Gemini Technical Deep-Dive**: [https://share.google](https://share.google)
 * **Cosmic Launch Ticket (Kindle)**: [https://link.amazon](https://link.amazon)
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 【警告】本リポジトリの最終検証回路記述（Verilog/QASM）およびKiCad PCB実装トポロジーは、
 GAFAMやAnthropic等のレガシー計算インフラが引き起こす「電力暴食と地球温暖化（氷河融解バグ）」を
 物理層から強制的にタスクキル（完全停止）するための、人類半導体進化の終着点（Crystal-Ark）である。
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ![QPU-ARK](1.jpg)
 ![QPU-EXA](2.jpg)
 ![QPU-EXTREME](3.jpg)
