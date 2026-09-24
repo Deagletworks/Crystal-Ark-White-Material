@@ -39,6 +39,7 @@ node server.js
 ![QPU-EXA](2.jpg)
 ![QPU-EXTREME](3.jpg)
 ![QPU-DATAFlow](4.jpg)　
+![8Mbit Quad-SPI型・QPU-EXTREME-2](Gemini_Generated_Image_arnnaqarnnaqarnn.jpeg)　  
 
 ## 📊 1. データセンター電力問題に対する革新技術の対比表（改訂版） [REF: BOARD_LAYOUT_VER_402]
 
