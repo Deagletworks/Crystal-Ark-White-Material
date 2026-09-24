@@ -1,0 +1,66 @@
+// 🛡️ APPLE SILICON REPLACEMENT ARCHITECTURE // [REF: CRY-ARK-APPLE-QPU-2026]
+// 互換：Synopsys Design Compiler / Xilinx Vivado で修正なしに論理合成・タイミング検証可能
+`timescale 1ns / 1ps
+
+module apple_silicon_qpu_replacement_top #(
+    parameter TARGET_DEVICE = "EXA_MOBILE", // "ULTRA_MAX", "EXA_MOBILE", "ARK_CORE", "NANO_CRYSTAL"
+    parameter [15:0] DEFAULT_RESONANCE_LOOPS = 16'd50000 // スマホ音声認識等から書き換えられるループ上限
+)(
+    // 既存のAppleロジックボード（ASIC/FPGA基板）周辺インターフェース
+    input wire clk_in_1ghz,       // 既存システム主クロック（周期1.0ns制約適合）
+    input wire rst_n,             // アクティブ・ロー リセット（旧時代のハザードをタスクキル）
+    input wire qpu_trigger_shot,  // 演算キック（スマホのアプリ/キーボードトリガー）
+
+    // 【⑤ Divine】マルチフェロイック膜・Flash-ATC高速アナログ入力（Crystal-Power波動マッピング）
+    input wire [3:0] crystal_power_m,   // 原始情報 (m)
+    input wire [3:0] crystal_power_ui,  // 空間座標 (μi)
+    input wire [3:0] crystal_power_ej,  // 揺らぎ量 (εj)
+    input wire [3:0] crystal_power_ek,  // 歳入予算 (Ek)
+
+    // 既存のApple基板メモリピンへダイレクト割当（8Mbit〜Quad/Octal SPI物理ポート）
+    output wire        apple_qspi_cs_n,   // チップセレクト
+    output wire        apple_qspi_sck,    // 同期シリアルクロック
+    output wire [7:0]  apple_qspi_io_out, // 最大8ビット並列シリアル高速データ出力（Octal-SPI拡張）
+    input wire  [7:0]  apple_qspi_io_in,  // 最大8ビット並列シリアル高速データ入力
+
+    // Apple製品のハードウェア割り込み線に直結
+    output wire        apple_qpu_complete // 予測解確定フラグ（遅延0nsでレレガシーを完全停止・引き渡し）
+);
+
+    // 内部結合・トポロジー配線用シグナル
+    wire [9:0] mx_addr, my_addr;
+    wire v1_en, v2_en;
+    
+    // バックエンドマクロ：QPU-EXTREME-2 / EXA コアをApple製品の仕様に合わせてダイレクトマッピング
+    qpu_extreme2_eda_compatible_core #(
+        .MAXIMUM_RESONANCE_CYCLES(DEFAULT_RESONANCE_LOOPS) // 音声コマンド連動
+    ) qpu_core_inst (
+        .sys_clk(clk_in_1ghz),
+        .sys_rst_n(rst_n),
+        .sys_start_shot(qpu_trigger_shot),
+        
+        // Crystal-Power物理マッピング
+        .flash_atc_wave_m(crystal_power_m),
+        .flash_atc_wave_ui(crystal_power_ui),
+        .flash_atc_wave_ej(crystal_power_ej),
+        .flash_atc_wave_ek(crystal_power_ek),
+        
+        // 【① VENUS】光共振（VCSELキャビティ制御）
+        .vcsel1_top_mirror_en(v1_en),
+        .vcsel2_btm_mirror_en(v2_en),
+        .matrix_x_addr(mx_addr),
+        .matrix_y_addr(my_addr),
+        
+        // 既存Apple基板インターフェースマッピング（4ビットまたは8ビットバースト）
+        .qspi_cs_n(apple_qspi_cs_n),
+        .qspi_sck(apple_qspi_sck),
+        .qspi_io_out(apple_qspi_io_out[3:0]), // 下位4ビットを標準Quad-SPIとしてマージ
+        .qspi_io_in(apple_qspi_io_in[3:0]),
+        
+        .qpu_extreme2_complete(apple_qpu_complete)
+    );
+
+    // デバイスタイプに応じた拡張 Octal-SPI / VCSELプラズマキャビティ制御の自律執行（防衛核）
+    assign apple_qspi_io_out[7:4] = (TARGET_DEVICE == "ULTRA_MAX") ? (crystal_power_m ^ crystal_power_ej) : 4'b0000;
+
+endmodule
