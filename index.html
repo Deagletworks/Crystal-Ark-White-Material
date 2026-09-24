@@ -120,5 +120,100 @@
         }
     }
 </script>
+
+
+
+
+<!-- index.html の 4連スライダーの直下に以下を追加 -->
+<div class="control-group">
+    <h3>🌐 ③ 2D直交メッシュ導波路エディタ（OLSWS物理位相デザイン）</h3>
+    <p style="font-size:0.85rem; color:#8fa0c4; margin:0 0 10px 0;">グリッドをタッチして、光LSI直交導波路の波の衝突ルート（位相プレーン）をスケッチしてください。</p>
+    <div style="text-align: center;">
+        <canvas id="mesh_canvas" width="320" height="320" style="background:#000; border: 2px solid #1f2d4d; border-radius: 8px; cursor: crosshair; box-shadow: 0 0 15px rgba(0,255,204,0.1);"></canvas>
+    </div>
+    <div style="margin-top: 10px; font-size: 0.85rem; color:#8fa0c4; text-align: center;">
+        現在の物理アクティブ結合数: <span id="active_nodes" style="color:#00ffcc; font-weight:bold;">0</span> / 256
+    </div>
+</div>
+
+<script>
+    // Canvasメッシュ・物理トポロジー制御ロジック
+    const canvas = document.getElementById('mesh_canvas');
+    const ctx = canvas.getContext('2d');
+    const gridSize = 16; // 16x16 = 256直交交差点マトリクス
+    const cellSize = canvas.width / gridSize;
+    let meshMatrix = Array(gridSize).fill().map(() => Array(gridSize).fill(0));
+
+    function drawMesh() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        // グリッド線（導波路）の描画
+        ctx.strokeStyle = '#111b2e';
+        ctx.lineWidth = 1;
+        for (let i = 0; i <= gridSize; i++) {
+            ctx.beginPath(); ctx.moveTo(i * cellSize, 0); ctx.lineTo(i * cellSize, canvas.height); ctx.stroke();
+            ctx.beginPath(); ctx.moveTo(0, i * cellSize); ctx.lineTo(canvas.width, i * cellSize); ctx.stroke();
+        }
+
+        // アクティブな波動結合点（FeRAM演算ノード）の描画
+        let activeCount = 0;
+        for (let y = 0; y < gridSize; y++) {
+            for (let x = 0; x < gridSize; x++) {
+                if (meshMatrix[y][x] === 1) {
+                    activeCount++;
+                    // 量子エンタングルメントを表現する光のパルス波をシミュレート描画
+                    ctx.fillStyle = 'rgba(0, 255, 204, 0.4)';
+                    ctx.beginPath(); ctx.arc(x * cellSize + cellSize/2, y * cellSize + cellSize/2, cellSize * 0.8, 0, Math.PI * 2); ctx.fill();
+                    
+                    ctx.fillStyle = '#00ffcc';
+                    ctx.beginPath(); ctx.arc(x * cellSize + cellSize/2, y * cellSize + cellSize/2, cellSize * 0.3, 0, Math.PI * 2); ctx.fill();
+                }
+            }
+        }
+        document.getElementById('active_nodes').innerText = activeCount;
+    }
+
+    // タッチ・クリックでの直感的位相スケッチ
+    function handleDraw(e) {
+        const rect = canvas.getBoundingClientRect();
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+        const x = Math.floor((clientX - rect.left) / cellSize);
+        const y = Math.floor((clientY - rect.top) / cellSize);
+        
+        if (x >= 0 && x < gridSize && y >= 0 && y < gridSize) {
+            meshMatrix[y][x] = 1; // その交差点をアクティブ化（導波路結合）
+            drawMesh();
+        }
+    }
+
+    canvas.addEventListener('mousemove', (e) => { if(e.buttons === 1) handleDraw(e); });
+    canvas.addEventListener('mousedown', handleDraw);
+    canvas.addEventListener('touchmove', (e) => { e.preventDefault(); handleDraw(e); }, { passive: false });
+    canvas.addEventListener('touchstart', handleDraw);
+
+    // 初期描画
+    drawMesh();
+
+    // 既存の submitToFab() 関数内の payload を以下のように拡張
+    async function submitToFab() {
+        log("ファブ入稿プロセス始動。物理位相マップおよびメッシュ構造をビルド中...");
+        
+        // 2D直交メッシュをシリアルなビットストリームに圧縮（防衛核Web3送信用）
+        const meshStream = meshMatrix.flat();
+
+        const payload = {
+            wave_m: parseInt(document.getElementById('wave_m').value),
+            wave_ui: parseInt(document.getElementById('wave_ui').value),
+            wave_ej: parseInt(document.getElementById('wave_ej').value),
+            wave_ek: parseInt(document.getElementById('wave_ek').value),
+            loops: currentLoops,
+            mesh_topology: meshStream // 256ビットの直交メッシュ・トポロジー
+        };
+
+        // 以降の fetch 通信処理はそのまま継続
+        // ... (省略) ...
+    }
+</script>
 </body>
 </html>
