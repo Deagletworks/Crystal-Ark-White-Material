@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QPU-EXTREME-2 Frontend</title>
+    <style>
+        body { background-color: #0b0f19; color: #00ffcc; font-family: monospace; padding: 20px; }
+        h1 { border-bottom: 2px solid #00ffcc; padding-bottom: 10px; font-size: 1.5rem; text-shadow: 0 0 10px #00ffcc; }
+        .control-group { background: #161f33; padding: 15px; border-radius: 8px; border: 1px solid #1f2d4d; margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; color: #8fa0c4; font-size: 0.9rem; }
+        .val { float: right; color: #ffffff; font-weight: bold; }
+        input[type=range] { width: 100%; height: 8px; background: #0b0f19; border-radius: 5px; outline: none; -webkit-appearance: none; }
+        input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 20px; height: 20px; background: #00ffcc; border-radius: 50%; cursor: pointer; box-shadow: 0 0 8px #00ffcc; }
+        button { width: 100%; padding: 15px; background: linear-gradient(135deg, #00ffcc, #0099ff); border: none; color: #0b0f19; font-weight: bold; font-size: 1.1rem; border-radius: 8px; cursor: pointer; box-shadow: 0 0 15px rgba(0,255,204,0.4); margin-top: 10px; }
+        button:active { transform: scale(0.98); }
+        #console { background: #000; color: #00ff66; padding: 10px; border-radius: 5px; font-size: 0.8rem; height: 120px; overflow-y: auto; border: 1px solid #00ff66; margin-top: 15px; }
+    </style>
+</head>
+<body>
+
+    <h1>⚡ QPU-EXTREME-2 物理位相設計端末</h1>
+
+    <!-- 4連波動スライダー（マルチフェロイック膜アナログ入力マッピング） -->
+    <div class="control-group">
+        <h3>🌌 ① 環境時空波動アナログ入力（4ビット幅: 0〜15）</h3>
+        <label>原始情報 (flash_atc_wave_m): <span id="m_val" class="val">8</span></label>
+        <input type="range" id="wave_m" min="0" max="15" value="8" oninput="updateVal('m', this.value)">
+        
+        <label style="margin-top:10px;">空間座標 (flash_atc_wave_ui): <span id="ui_val" class="val">4</span></label>
+        <input type="range" id="wave_ui" min="0" max="15" value="4" oninput="updateVal('ui', this.value)">
+        
+        <label style="margin-top:10px;">揺らぎ量 (flash_atc_wave_ej): <span id="ej_val" class="val">2</span></label>
+        <input type="range" id="wave_ej" min="0" max="15" value="2" oninput="updateVal('ej', this.value)">
+        
+        <label style="margin-top:10px;">歳入予算 (flash_atc_wave_ek): <span id="ek_val" class="val">1</span></label>
+        <input type="range" id="wave_ek" min="0" max="15" value="1" oninput="updateVal('ek', this.value)">
+    </div>
+
+    <!-- 音声コマンド聞き取り（ループ回数動的制御コア） -->
+    <div class="control-group">
+        <h3>🎙️ ② 循環前進コントロール（音声認識）</h3>
+        <p style="font-size:0.85rem; color:#8fa0c4; margin:0 0 10px 0;">「5万回ループ」「10万回」などと話しかけてください。</p>
+        <label>最大連想循環回数 (MAXIMUM_RESONANCE_CYCLES):</label>
+        <div style="font-size: 1.5rem; font-weight: bold; color: #ffffff;" id="loop_display">50000 回</div>
+    </div>
+
+    <!-- クラウド自動入稿トリガー -->
+    <button onclick="submitToFab()">🏆 世界中の後進ファブへダイレクト自動入稿</button>
+
+    <div id="console">>> システムブート完了。常温量子物理ファブリック待機中...</div>
+
+<script>
+    let currentLoops = 50000;
+    const logBox = document.getElementById('console');
+
+    function log(msg) {
+        logBox.innerHTML += `<br>>> ${msg}`;
+        logBox.scrollTop = logBox.scrollHeight;
+    }
+
+    function updateVal(type, val) {
+        document.getElementById(`${type}_val`).innerText = val;
+    }
+
+    // 音声コマンド（ループ回数の聞き取りロジック）の簡易スクリプト
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (SpeechRecognition) {
+        const recognition = new SpeechRecognition();
+        recognition.continuous = true;
+        recognition.interimResults = false;
+        recognition.lang = 'ja-JP';
+
+        recognition.onresult = (event) => {
+            const resultText = event.results[event.results.length - 1][0].transcript;
+            log(`音声検知: "${resultText}"`);
+            
+            // 「○万回」の数値を抽出する簡易正規表現
+            const match = resultText.match(/(\d+)\s*万/);
+            if (match) {
+                currentLoops = parseInt(match[1]) * 10000;
+                document.getElementById('loop_display').innerText = `${currentLoops} 回`;
+                log(`[確定] ループ回数を ${currentLoops} 回にリコンフィギュラブル更新しました。`);
+            }
+        };
+
+        recognition.onerror = () => { recognition.start(); };
+        recognition.onend = () => { recognition.start(); };
+        recognition.start();
+        log("音声認識コア：常時起動完了。");
+    } else {
+        log("警告: この端末はWeb Speech APIに対応していません。");
+    }
+
+    // クラウド側Vivado連携APIへの自動入稿キック
+    async function submitToFab() {
+        log("ファブ入稿プロセス始動。物理位相マップをビルド中...");
+        const payload = {
+            wave_m: parseInt(document.getElementById('wave_m').value),
+            wave_ui: parseInt(document.getElementById('wave_ui').value),
+            wave_ej: parseInt(document.getElementById('wave_ej').value),
+            wave_ek: parseInt(document.getElementById('wave_ek').value),
+            loops: currentLoops
+        };
+
+        try {
+            const response = await fetch('/api/submit-qpu', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+            const data = await response.json();
+            if(data.success) {
+                log(`祝・大勝利！ Vivado自動パッケージング完了。出力ポート: ${data.outputPath}`);
+            } else {
+                log(`エラー: ${data.message}`);
+            }
+        } catch (err) {
+            log(`通信ハザード検知: ${err.message}`);
+        }
+    }
+</script>
+</body>
+</html>
