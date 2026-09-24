@@ -42,6 +42,8 @@ node server.js
 ![8Mbit Quad-SPI型・QPU-EXTREME-2](Gemini_Generated_Image_arnnaqarnnaqarnn.jpeg)　  
 
 
+![Apple Silicon Replacement](Gemini_Generated_Image_z5u0pfz5u0pfz5u0.jpeg)　
+
 ## 🍏 Apple Silicon Replacement Matrix (ASIC/FPGA Design Case)
 
 本リポジトリで定義されたQPU設計手法（OLSWSコアおよび常温FeRAM物理演算ファブリック）を用い、Apple社の全レガシープロセッサ（Mシリーズ/Aシリーズ）および高発熱なUnified Memory/HBMを100%パージして完全置換するための物理レイアウト・マトリクスです。
