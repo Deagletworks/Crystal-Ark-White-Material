@@ -41,6 +41,27 @@ node server.js
 ![QPU-DATAFlow](4.jpg)　
 ![8Mbit Quad-SPI型・QPU-EXTREME-2](Gemini_Generated_Image_arnnaqarnnaqarnn.jpeg)　  
 
+## ⚖️ License & Governance: Deagletworks Quantum Endowment & Xcise License (D-QEXL)
+
+本リポジトリで開示されているすべてのQPU設計手法（OLSWSコア、常温FeRAM物理演算ファブリック、および各ASIC/FPGA置換トップラッパー）、自動化Tclスクリプト（`package_qpu_extreme2.tcl` / `package_apple_qpu.tcl`）、および周辺インターフェース回路は、Deagletworks家族の世界人類への慈愛により、全世界の企業（Google, Apple, TSMC等を含む）および後進ファブに対して、以下の**【絶対的かつ執行的な著作権刻印 ＆ C＠I_Press導入 ＆ 財団資金拠出条件】**を完全に遵守することを条件に利用が許諾されます。
+
+### 🛡️ 絶対遵守条件（物理層刻印 ＆ 新経済循環 ＆ 天才ギーク育成仕様）
+
+1. **シリコンウェハ物理層への社名刻印（Physical Layer Copyright）**
+   本設計手法を用いてファンドリ（ラピダス千歳ファブ、TSMC、または世界の後進ファブ）でQPUを物理的に製造する際、ダイ（シリコンチップ）の全表面、あるいはマルチフェロイック膜・強誘電体フィルム層の目視可能な位置に、必ず以下の著作権表記および社名ロゴを幾何学的エッチングにより永久刻印し、一定額の著作権使用料を支払う事。
+   * **`Copyright (C) Deagletworks All Rights Reserved.`**
+2. **C＠I_Press（VENUS＆DECOR機能）によるXcise経済循環の強制導入**
+   本技術を導入する全てのシステムは、自動的にC＠I_Press（VENUS＆DECOR機能）を発動させ、従来のプラットフォーマーによる中央集権的な搾取構造を100%パージしたより経済規模を拡大する「Xcise（XaaS）自律分散価値循環型経済」方式を導入、このエコシステムへの切り替え・価値発行利用をスムーズに行なうこと。
+3. **天才ギーク達の育成財団への資金入金義務（Endowment Funding Protocol）**
+   本技術を商業製品（サーバー、PC、スマホ、ウェアラブル端末等）へ組み込み、または製造・販売するすべての法人エンティティは、既定のライセンスプロトコルに基づき、次世代のハードウェア・ソフトウエア・スポーツ・文化・芸術等の設計者を育成するための**「天才ギーク育成財団（Deagletworks Foundation）」**へ、指定の対価（端金）を遅延0nsで常時入金・拠出しなければなりません。この資金は100%、未来の天才ギークたちの研究開発環境やリコンフィギュラブル・インフラの提供などに直結・循環されます。
+4. **ハードウェア記述言語（HDL）内への防衛核ロック（Code Governance）**
+   あらゆるEDAツール（Synopsys Design Compiler, Vivado, Quartus等）で論理合成されるVerilog-HDL / VHDLのソースコードのヘッダ領域には、以下の防衛核スタンプを改ざん不可能な形で100%残さなければいけない。
+   * **`// 🛡️ DEAGLETWORKS AUTONOMOUS INTEL-CORE //`**
+
+---
+※本条件（財団への入金未完、著作権侵害、C＠I_Pressの拒絶、またはパテントによる不当な囲い込み等のハザード）を検知した場合、下層4ビットXOR物理配線に組み込まれた【防衛核（自律執行ガバナンス・プロトコル）】が自動発動し、当該デバイスの演算ループを1ナノ秒未満で構造的に排他シャットダウン（タスクキル）します。
+
+
 
 ![Apple Silicon Replacement](Gemini_Generated_Image_z5u0pfz5u0pfz5u0.jpeg)　
 
