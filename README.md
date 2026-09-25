@@ -223,7 +223,7 @@ Google社のMaaS子会社であるWaymo（ウェイモ）の自動運転AI（Gem
 
 
 ## 🚗 TOYOTA (Global Mobility & Woven City Infrastructure) QPU Replacement Matrix
-
+![TOYOTA (Global Mobility & Woven City Infrastructure) QPU](Gemini_Generated_Image_jbs61ujbs61ujbs6.jpeg)　
 トヨタ自動車（TOYOTA）の全車両制御ECUマトリクス（旧来のμITRON環境からの完全パージ）、次世代自動運転システム（Teammateコア）、スマートシティ基盤（Woven City）、および大統一MaaS循環エコシステムを、我々のQPUラインナップおよびC@I_Press（Xcise）価値循環システムへと完全置換するための設計事例マトリクスです。
 
 既存の半導体EDA工具（Synopsys Design Compiler, Vivado等）で修正なしに論理合成・タイミング検証が可能です。
