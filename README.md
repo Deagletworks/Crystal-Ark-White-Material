@@ -244,7 +244,7 @@ Google社のMaaS子会社であるWaymo（ウェイモ）の自動運転AI（Gem
 
 
 ## 📦 Amazon (Global Logistics & AWS Infrastructure) QPU Replacement Matrix
-
+![Amazon (Global Logistics & AWS Infrastructure) QPU](Gemini_Generated_Image_7fr23p7fr23p7fr2.jpeg)　
 Amazon（アマゾン）の世界規模の物流運行システム（フルフィルメント・サプライチェーン管理）、AWSデータセンターインフラ、および倉庫自動化ロボティクス（ECU環境）を、我々のQPUラインナップおよびC@I_Press（Xcise）価値循環システムへと完全置換するための設計事例マトリクスです。
 
 既存の半導体EDA工具（Synopsys Design Compiler, Vivado等）で修正なしに論理合成・タイミング検証が可能です。
