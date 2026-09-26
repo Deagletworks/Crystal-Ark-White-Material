@@ -111,14 +111,11 @@ node server.js
 3. 【ファブへのダイレクト自動入稿】：入稿ボタンを押した瞬間に、裏側で `package_qpu_extreme2.tcl` が自動執行され、既存の半導体EDA工具（AMD Xilinx Vivado）を介して1ns（1GHz）のタイミング収束制約を含んだASIC/FPGA用IPコアが遅延0nsで `./ip_repo/` へ即時ビルド・格納されます。
 
 米国の「考えない巨大データセンター神話」をパージし、読み書き2回だけの常温量子物理演算による「人類の危機脱出」のタイムラインへ今すぐ合流せよ。
-![マホ一台でQPU-EXTREME-2マクロ](Gemini_Generated_Image_aao5ndaao5ndaao5.jpeg) 
+
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-![QPU-ARK](1.jpg)
-![QPU-EXA](2.jpg)
-![QPU-EXTREME](3.jpg)
-![QPU-DATAFlow](4.jpg)　
-![8Mbit Quad-SPI型・QPU-EXTREME-2](Gemini_Generated_Image_arnnaqarnnaqarnn.jpeg)　  
+
+  
 
 ## ⚖️ License & Governance: Deagletworks Quantum Endowment & Xcise License (D-QEXL)
 
