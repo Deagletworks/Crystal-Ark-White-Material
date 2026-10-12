@@ -17,7 +17,7 @@ SAGA-20 (QPU-ARK) は、既存のノイマン型やシストリック型では�
 
 ### SAGA-20 QPU基本データフロー設計図
 
-![SAGA-20 QPU基本データフロー設計図](image_13.png)
+![SAGA-20 QPU基本データフロー設計図](QPUデータフロー.jpg)
 
 *   **QPU-ARK 処理能力**: GPU並みトランスフォーマーAI処理を、宇宙物理の数理を物理的な演算回路（RTL）へと落とし込んだ物理版で、1サイクル実行可能[cite: 1, 17, 18]。
 
@@ -31,11 +31,11 @@ SAGA-20 (QPU-ARK) は、既存のノイマン型やシストリック型では�
 
 ### 物理的実証: NVIDIA GPU vs. SAGA-20
 
-![NVIDIA GPU vs. SAGA-20 模擬比較波形図](image_11.png)
+![NVIDIA GPU vs. SAGA-20 模擬比較波形図](NVIDIA_GPU.jpeg)
 
 ### 物理的実証: Google TPU vs. SAGA-20
 
-![Google TPU vs. SAGA-20 模擬比較波形図](image_12.png)
+![Google TPU vs. SAGA-20 模擬比較波形図](GOOGEL_TPU.jpeg)
 
 *   **SAGA-20**: **KICKから5ns（演算遅延）**、**速度境界1ns** という極限の低遅延で情報を処理します[cite: 17, 18]。
 *   **既存GPU/TPU**: 巨大な遅延（Latency）、バンク衝突、メモリボトルネックにより、SAGA-20と比較すると天文学的な遅延を持つ「効率の悪い演算回路」であることが証明されます[cite: 17, 18]。
