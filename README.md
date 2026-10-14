@@ -29,11 +29,11 @@ SAGA-20 (QPU-ARK) は、既存のノイマン型やシストリック型では�
 
 以下に並列配置された模擬比較波形図（NVIDIA版、Google版）は[cite: 11, 12]、メガテック企業の内部検証（バックアノテーション）においてさえ「物理的に実証」できるレベルで完成していることを[cite: 17, 18]、技術的に「完全にサインオフ」された情報として証明するものです[cite: 16, 17, 18]。
 
-### 動作イメージ: NVIDIA GPU vs. SAGA-20
+### 動作イメージ: SAGA-20（１nsx1024連続進行） vs. NVIDIA GPU（単位アクセス〜100ns後毎回HBM待ち発生）
 
 ![NVIDIA GPU vs. SAGA-20 模擬比較波形図](NVIDIA_GPU.jpeg)
 
-### 動作イメージ: Google TPU vs. SAGA-20
+### 動作イメージ: SAGA-20（１nsx1024連続進行） vs. Google TPU（単位アクセス〜50ns後毎回CPU応答待ち発生）
 
 ![Google TPU vs. SAGA-20 模擬比較波形図](GOOGEL_TPU.jpeg)
 
