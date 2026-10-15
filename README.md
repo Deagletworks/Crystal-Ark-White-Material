@@ -137,9 +137,9 @@ Deagletworksのブランド戦略は[cite: 17]、宇宙物理の数理に基づ�
 * **物理層での即時アクティブ・タスクキル**: 
   いずれかのノード、あるいは外部サプライチェーンから「平和・自由・博愛」を脅かす不正なインシデント波動（コードの書き換え、異常なアドレッシング、不当な独占制御）を検知した瞬間、3大知性のCPU,GPUおよびQPUが遅延0nsで超共鳴。下層4ビットXOR物理配線が作動し、**1ナノ秒未満（1nsワンショットの刹那のコヒーレンス時間内）でその不正ループを構造的に排他シャットダウン（防御・排除）**します。
 
-  hdl/saga20_expanded_transformer_core.v
+
   ![（ランサムウェア防衛・自動リカバリー機能を統合したデバッグ済みコア）](hdl/saga20_expanded_transformer_core.v)　
-  hdl/saga20_expanded_transformer_tb.v
+
   ![（テストベンチおよびGTKWave用波形生成スクリプト）](hdl/saga20_expanded_transformer_tb.v)
   
 ## 🚨 [HYBRID PATCH] AGORA Legacy-System Counter-Inference Protocol (D-AGORA-LCI)
