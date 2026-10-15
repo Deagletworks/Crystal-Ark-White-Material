@@ -1,4 +1,5 @@
-# Crystal-Ark: SAGA-20 QPU & ONE UNION Architecture
+# ONE UNION Architecture
+# Crystal-Ark: SAGA-20 QPU
 
 > **"Transcending 100 years of dualistic arithmetic and von Neumann bottlenecks. Returning to the living physics of the universe as a universal human asset."**
 
