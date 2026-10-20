@@ -76,7 +76,7 @@ SAGA-20 (QPU-ARK) は、既存のノイマン型やシストリック型では�
 
 ![NVIDIA GPU vs. SAGA-20 模擬比較波形図](GPU-4.jpg)
 
-### verilog-SIM: SAGA-20（１nsx1024回完了） vs. Google TPU（初回アクセス50ns後CPU応答待ち）
+### verilog-SIM: SAGA-20（１nsx1024回完了） vs. Google TPU（初回アクセス50ns後CPU+HBM応答待ち）
 
 ![Google TPU vs. SAGA-20 模擬比較波形図](TPU-1.jpg)
 
