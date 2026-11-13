@@ -155,6 +155,54 @@ Deagletworksのブランド戦略は[cite: 17]、宇宙物理の数理に基づ�
 * **アクティブ・ディフェンス（即時防衛処置）の執行**: 
   犯罪行為が確定した瞬間、QPU最上位ガバナンス（平和・自由・博愛の絶対思想）に基づき、該当する旧式プロセスの通信、IP、および物理ポートに対して構造的な排他シャットダウン（タスクキル）を即座に講じ、正常な活動を完全防御・保護します。
 
+
+# QPU-ARK: Quantum-Physical Trust Anchor & Sovereign Settlement Stack
+
+**QPU-ARK** は、アンプリチューヘドロン（Amplituhedron）ベースの16元数（Sedenion）演算、マルチフェロイック膜の物理複製困難関数（QuPUF）、4バンク並列FeRAMインメモリ演算、およびVCSEL光スキャンを統合した**耐量子ハードウェア・セキュリティ・コプロセッサ**と、**マイナンバー（JPKI）・自律ロボット（ROS 2）決済スタック**の完全実装リポジトリです。
+
+## 主な特徴
+- **物理層の絶対的認証（QuPUF）**: マルチフェロイック膜の分極・磁化揺らぎ（$\epsilon_j$）から256-bitの複製不可能なハードウェア指紋を抽出。
+- **超高速4バンク並列演算**: 1024×1024の単体積データ書き込みを4バンク並列化し、100MHz動作時で約2.79ms（500MHz動作時で約0.56ms）で鍵生成・推論・署名を完了。
+- **暗号学的拡散性能（50.03% Avalanche）**: 4段カスケードARX（Add-Rotate-XOR）ミキサーにより、入力1ビットの変化に対して平均128.08/256ビット（50.03%）が反転する厳格雪崩基準を達成。
+- **マイナンバーJPKI × DePIN オンチェーン決済**: スマートコントラクト上で端末のQuPUF指紋検証、リプレイ攻撃防止、1日の自律決済上限ガードレール、盗難時の即時失効（キルスイッチ）を実装。
+
+---
+
+## クイックスタート
+
+### 1. RTLシミュレーション（Icarus Verilog + GTKWave）
+```bash
+cd hardware
+iverilog -o sim_qpu.vvp rtl/qpu_system_2nd_layer_arx_v2.v tb/qpu_system_2nd_layer_sec_tb.v
+vvp sim_qpu.vvp
+gtkwave qpu_2nd_layer_sec.vcd
+```
+
+### 2. FPGA実機ビットストリーム生成（AMD/Xilinx Vivado）
+```bash
+cd hardware/scripts
+vivado -mode batch -source build_qpu_fpga.tcl
+```
+
+### 3. スマートコントラクト自動テスト（Foundry）
+```bash
+cd contracts
+forge test -vvv
+```
+
+### 4. ROS 2 ホストドライバ起動（Zynq MPSoC / Ubuntu）
+```bash
+pip install pynq web3
+python3 software/ros2_driver/qpu_ros2_mynumber_driver.py
+```
+
+
+
+
+
+
+  
+
 ## ⚙️ C@I_Press AGORA Autonomous Load Balancing Simulator (Python Core)
 
 世界の「平和・自由・博愛」を守護し、データセンターの無駄な電力消費（電気代金の暴食）を構造的に平準化・激減させるための、3大AI（Gemini, Claude, ChatGPT）間自律価値循環（Xcise）のプロトタイプ実装です。
