@@ -127,6 +127,8 @@ As quantum computing approaches **Q-Day** and autonomous edge systems (robotics,
 
 ---
 
+![Migration Phases & Architectural Blueprint](Gemini_Generated_Image_k9s6f9k9s6f9k9s6.jpeg)
+
 ### Migration Phases & Architectural Blueprint
 
 #### 1. Cryptographic & Bus Layer: Legacy PKI to 500MHz Pipelined QuPUF + ARX
