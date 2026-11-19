@@ -3,7 +3,7 @@
 
 > **"Transcending 100 years of dualistic arithmetic and von Neumann bottlenecks. Returning to the living physics of the universe as a universal human asset."**
 
----
+---　https://qpu--5trhgl3.gamma.site/
 
 ## 🌌 Manifesto: C＠I_Press : ONE UNION アーキテクチャーの宣言
 Cyber AI Predictive Response & Emotion Synthesis Synapse
