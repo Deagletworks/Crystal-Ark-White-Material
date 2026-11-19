@@ -119,6 +119,42 @@ Deagletworksのブランド戦略は[cite: 17]、宇宙物理の数理に基づ�
 ## 📚 ドキュメント構成 (Repository Structure)
 
 
+## Infrastructure Migration Overview: From Legacy Cryptography & Fiat Ledgers to Quantum-Native Autonomous Economics
+
+As quantum computing approaches **Q-Day** and autonomous edge systems (robotics, mobility, and distributed physical infrastructure) scale across global and interplanetary networks, legacy public-key cryptography (RSA/ECDSA) and batch-oriented financial ledgers face structural bottlenecks in latency, key/signature resilience, and real-time governance[cite: 2, 29].
+
+**Crystal-Ark / QPU-ARK & QPU-C@I_Press** provides a hardware-enforced migration path across four progressive layers—enabling mega-tech platforms and financial institutions to transition safely without disrupting live operations[cite: 29, 30].
+
+---
+
+### Migration Phases & Architectural Blueprint
+
+#### 1. Cryptographic & Bus Layer: Legacy PKI to 500MHz Pipelined QuPUF + ARX
+* **Legacy Bottleneck:** Software-bound keys vulnerable to quantum cryptanalysis and physical extraction, coupled with high-latency consensus or oversized payloads on constrained edge nodes[cite: 2].
+* **Target Architecture:** A **500MHz pipelined quantum security core** integrated over **AXI4-Lite** that derives a 256-bit **Quantum Physical Unclonable Function (QuPUF)** device key and post-quantum transaction signature from multiferroic film entropy, 3-phase **VCSEL** scanning, **4-bank parallel FeRAM** (or FPGA UltraRAM) operations, and a 2-stage pipelined 4-stage cascade **ARX** mixer with pipeline flush (`ST_PIPE_FLUSH`) control[cite: 29, 30].
+* **Institutional Value:** Sub-millisecond hardware root-of-trust and signature generation with deterministic bus-level observability[cite: 29, 30].
+
+#### 2. Microeconomic & Governance Layer: Batch Ledgers to Per-ID Real-Time Wallets
+* **Legacy Bottleneck:** Delayed settlement, fragmented tax/benefit reconciliation, and lack of deterministic hardware circuit breakers against runaway autonomous agents[cite: 29].
+* **Target Architecture:** Per-ID hardware ledger wallets (**QPU-C@I_Press**) tracking inflows, outflows, intellectual property (IP) usage deltas, and accumulated IP taxes per individual ID, computing real-time net disposable income with Universal Basic Income (UBI) and fixed-point tax parameters while XOR-binding QuPUF keys into transaction signatures[cite: 29].
+* **Institutional Value:** Hardware-enforced **transaction stop guardrails** when daily spending limits are exceeded, paired with identity-linked cryptographic accountability[cite: 29].
+
+#### 3. Sovereign & Cross-Border Layer: Siloed Clearing to Multi-Party & FX Synchronization
+* **Legacy Bottleneck:** Slow cross-border clearing, disconnected fiscal/reserve accounting, and manual liquidity rebalancing across sovereign or enterprise entities[cite: 29].
+* **Target Architecture:** Multi-party and dual-host network topologies connecting individual wallets with national/corporate **HOST** accounting cores that aggregate tax pools, compute leveraged pre-funding reserves (e.g., **10x reserve leverage**), drive dynamic UBI circulation, and execute fixed-point **foreign exchange (FX)** conversions for cross-border trade[cite: 28, 29].
+* **Institutional Value:** Synchronized micro-to-macro liquidity circulation with QuPUF-signed cross-border settlement integrity[cite: 28, 29].
+
+#### 4. Interplanetary & Energy Layer: Terrestrial Fiat to Harvest-Backed Xcise UBI
+* **Legacy Bottleneck:** Terrestrial currency assumptions break down across high-latency orbital, lunar, and Martian communications or off-grid energy environments[cite: 29].
+* **Target Architecture:** An interplanetary energy value currency ecosystem (**Xcise**) that aggregates environmental and space energy-harvesting inputs (such as gravitational wave and solar flux conversion values) into an energy currency pool, scales backing reserves, and distributes dynamic universal UBI across Earth and Mars participant wallets[cite: 29].
+* **Institutional Value:** Future-proof settlement and resource-allocation continuity across terrestrial, orbital, and interplanetary nodes[cite: 29].
+
+---
+
+### Recommended Adoption Path for Partners
+1. **Simulation & Bus Validation:** Evaluate RTL modules and AXI4-Lite register/waveform behavior in simulation and FPGA testbeds[cite: 29, 30].
+2. **Pilot Guardrail & Settlement Integration:** Map per-ID wallet ledgers, daily limits, and host reserve/FX rules to institutional treasury or DePIN workflows[cite: 29].
+3. **Multi-Domain & Energy-Linked Expansion:** Extend synchronized host nodes across multi-jurisdictional or energy-backed settlement environments[cite: 29].
 
 
 
