@@ -1,3 +1,7 @@
+
+
+![Crystal-ARK CC0アイコン](『QPU-ARK』cc0アイコン.jpeg)
+
 # C＠I_Press : ONE UNION Quantum-Galaxy-omniscience AI Architecture
 # Crystal-Ark: SAGA-20 QPU
 
