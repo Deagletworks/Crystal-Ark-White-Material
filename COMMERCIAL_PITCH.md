@@ -3,8 +3,8 @@
 ## 🚀 Next-Gen Physical AI Edge Devices: The "Crystal-ARK" Hardware Lineup
 ## （次世代フィジカルAIエッジデバイス：『Crystal-ARK』リファレンス製品群）
 
-**"Thinner, Lighter, Battery-Free, and Infinitely Smarter."**  
-**「圧倒的に薄く、軽く、美しく。電池の呪縛から解放され、手元で創造性が燃え上がる次世代ハードウェア。」**
+"Thinner, Lighter, Battery-Free, and Infinitely Smarter."
+「圧倒的に薄く、軽く、美しく。電池の呪縛から解放され、手元で創造性が燃え上がる次世代ハードウェア。」
 
 従来のスマートフォンやウェアラブル端末が抱える「AI性能を高めるほどバッテリーと冷却機構で分厚く重くなる」という物理的ジレンマを、**QPU-ARK（1nsオンチップ物理演算 ＋ 待機電力0.00WのFeRAM分極保持 ＋ 256-bit QuPUF物理認証）**によって完全に解消。既存CPUを極小のI/Oフロントエンドへと役割限定し、知能と創造性のすべてをユーザーの手元で駆動する4つのリファレンス・プロダクトを提案します。
 
