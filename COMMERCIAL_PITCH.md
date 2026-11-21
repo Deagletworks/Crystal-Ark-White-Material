@@ -15,6 +15,20 @@
 | **3. ARK-Buddy**<br>（アーク・バディ） | 掌サイズの多面体結晶（または柔軟な生体模倣フォルム）。センサー・アクチュエータとQPUが直結。 | クラウドへ音声や映像を送らず、光・音・振動の生波形を1nsで直接感じ取り、生き物のように即応する自律型フィジカルAIパートナー。家庭内プライバシーを物理層で100%遮断・保護。 | **QPU-ARK-CORE**<br>（1Mbit常温FeRAM演算器単体） |
 | **4. Crystal-Ring**<br>（クリスタル・リング） | 白きセラミック＆サファイア結晶リング。待機電力 **0.00000W** の永久分極保持。 | ドア、PC、モビリティ、決済端末に近づけるだけで、256-bit QuPUF物理認証とXcise価値交換が1ms未満で完了。不正アクセス検知時は1ns物理クロック遮断で資産と身分を完全防衛。 | **QPU-NANO-CRYSTAL**<br>（256Kbit多次元位相プレーン） |
 
+【図1】次世代フィジカルAIエッジデバイス群：『Crystal-ARK』リファレンス・ラインナップ
+従来のリチウムイオンバッテリーと冷却ファンを排除し、常温1ナノ秒物理演算コアとFeRAM分極保持を搭載した次世代デバイス群の概要です。詳細は提供元文書をご確認ください。
+[Figure 1] Next-Gen Physical AI Edge Devices: The "Crystal-ARK" Reference Lineup
+A reference lineup of battery-free, fanless physical AI devices powered by room-temperature 1ns computing and FeRAM polarization. Please refer to the source documents for complete specifications.
+
+![【図1】次世代フィジカルAIエッジデバイス群](Gemini_Generated_Image_cdm4rlcdm4rlcdm4.jpeg)
+
+【図2】Crystal-Slate（クリスタル・スレート）――「消費する端末」から「創造する楽器」へ
+厚さ1.5mmの半透明結晶ガラスに立体導波路とマルチフェロイック薄膜を積層し、直感的なスケッチや数式を瞬時にホログラムや音楽へと変換するクリエイター向け端末の解説です。詳細は提供元文書をご確認ください。
+[Figure 2] Crystal-Slate — Evolving from a "Consumption Screen" to an "Instrument of Creation"
+A 1.5mm battery-free translucent crystal sheet featuring a 3D orthogonal waveguide mesh that transforms sketches and formulas into live 3D topologies. Please refer to the source documents for complete specifications.
+
+![【図2】Crystal-Slate（クリスタル・スレート）――「消費する端末」から「創造する楽器」へ](Gemini_Generated_Image_94zr1i94zr1i94zr.jpeg)
+
 ### 💡 Strategic Value for OEMs & Hardware Architects（メーカー・設計者への導入メリット）
 1. **Radical Form-Factor Freedom（筐体デザインの完全自由化）**: 内部体積の50%以上を占めていたリチウムイオンバッテリーと放熱ヒートシンクを削減し、これまでにない極薄・軽量デザインを実現。
 2. **Zero-Cloud Latency & 100% Privacy（クラウド遅延ゼロ＆完全プライバシー）**: 外部サーバー通信なしで高度な推論・創造支援が完結するため、通信コストゼロと究極のセキュリティを両立。
