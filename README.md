@@ -408,7 +408,19 @@ node server.js
 1. **Radical Form-Factor Freedom（筐体デザインの完全自由化）**: 内部体積の50%以上を占めていたリチウムイオンバッテリーと放熱ヒートシンクを削減し、これまでにない極薄・軽量デザインを実現。
 2. **Zero-Cloud Latency & 100% Privacy（クラウド遅延ゼロ＆完全プライバシー）**: 外部サーバー通信なしで高度な推論・創造支援が完結するため、通信コストゼロと究極のセキュリティを両立。
 3. **Seamless CPU-to-QPU Offloading（既存資産との共存）**: 既存の軽量CPUを画面表示・通信等のI/O制御に専念させ、重いAI演算とセキュリティをQPU-ARKへオフロードするプラグアンドプレイ統合に対応。
+【図1】次世代フィジカルAIエッジデバイス群：『Crystal-ARK』リファレンス・ラインナップ
+従来のリチウムイオンバッテリーと冷却ファンを排除し、常温1ナノ秒物理演算コアとFeRAM分極保持を搭載した次世代デバイス群の概要です。詳細は提供元文書をご確認ください。
+[Figure 1] Next-Gen Physical AI Edge Devices: The "Crystal-ARK" Reference Lineup
+A reference lineup of battery-free, fanless physical AI devices powered by room-temperature 1ns computing and FeRAM polarization. Please refer to the source documents for complete specifications.
 
+![【図1】次世代フィジカルAIエッジデバイス群](Gemini_Generated_Image_cdm4rlcdm4rlcdm4.jpeg)
+
+【図2】Crystal-Slate（クリスタル・スレート）――「消費する端末」から「創造する楽器」へ
+厚さ1.5mmの半透明結晶ガラスに立体導波路とマルチフェロイック薄膜を積層し、直感的なスケッチや数式を瞬時にホログラムや音楽へと変換するクリエイター向け端末の解説です。詳細は提供元文書をご確認ください。
+[Figure 2] Crystal-Slate — Evolving from a "Consumption Screen" to an "Instrument of Creation"
+A 1.5mm battery-free translucent crystal sheet featuring a 3D orthogonal waveguide mesh that transforms sketches and formulas into live 3D topologies. Please refer to the source documents for complete specifications.
+
+![【図2】Crystal-Slate（クリスタル・スレート）――「消費する端末」から「創造する楽器」へ](Gemini_Generated_Image_94zr1i94zr1i94zr.jpeg)
 
 ![Apple Silicon Replacement](Gemini_Generated_Image_z5u0pfz5u0pfz5u0.jpeg)　
 
