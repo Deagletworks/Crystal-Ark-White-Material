@@ -1,3 +1,4 @@
+![Crystal-ARK CC0アイコン](『QPU-ARK』cc0アイコン.jpeg)
 # 🚀 Crystal-ARK / QPU-ARX500 入門ガイド（学生・メイカー・エンジニア向け）
 # Quickstart Guide for Students, Makers & Independent Engineers
 
